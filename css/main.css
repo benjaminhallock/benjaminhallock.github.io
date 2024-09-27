@@ -4,3 +4,44 @@ a {
   background-color: transparent;
   margin-top: 10px;
 }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+}
+
+.card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+p, li {
+  font-weight: 300;
+}
+
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fixed-height-carousel {
+  height: 400px;
+  overflow: hidden;
+}
+
+.fixed-height-carousel .carousel-inner,
+.fixed-height-carousel .carousel-item {
+  height: 100%;
+}
+
+.fixed-height-carousel .carousel-item img {
+  object-fit: scale-down;
+  height: 100%;
+  width: 100%;
+}
+
+footer {
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
