@@ -5,61 +5,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Merriweather:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Ben</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
+    <div class="sidebar" id="sidebar">
+        <button class="btn btn-link d-md-none mt-3 ms-3 sidebar-toggle" type="button" data-bs-toggle="collapse"
+            data-bs-target="#sidebarContent" aria-expanded="false" aria-controls="sidebarContent">
+            <i class="bi bi-list"></i>
+        </button>
+        <div class="collapse d-md-block" id="sidebarContent">
+            <div class="d-flex flex-column flex-shrink-0 p-3" style="width: 280px; height: 100vh;">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-4">Benjamin Hallock</span>
+                </a>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Home</a>
+                        <a href="index.html" class="nav-link" aria-current="page">
+                            <i class="bi bi-house-door me-2"></i>
+                            Home
+                        </a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/about.html">About</a>
+                    <li>
+                        <a href="about.html" class="nav-link active">
+                            <i class="bi bi-person me-2"></i>
+                            About
+                        </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact.html">Contact</a>
+                    <li>
+                        <a href="projects.html" class="nav-link text-white">
+                            <i class="bi bi-briefcase me-2"></i>
+                            Projects
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#resume" class="nav-link text-white">
+                            <i class="bi bi-file-earmark-text me-2"></i>
+                            Resume
+                        </a>
                     </li>
                 </ul>
+                <hr>
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                        id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="./img/face.jpeg" alt="" width="32" height="32" class="rounded-circle me-2">
+                        <strong>Contact</strong>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="mailto:benjaminhallock@gmail.com">Email</a></li>
+                        <li><a class="dropdown-item" href="https://www.linkedin.com/in/benjaminhallock/">LinkedIn</a>
+                        </li>
+                        <li><a class="dropdown-item" href="https://github.com/benjaminhallock">GitHub</a></li>
+                    </ul>
+                </div>
             </div>
-        </nav>
-    </header>
+        </div>
+    </div>
+    <div class="content-wrapper">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="text-center mb-5">About Me</h1>
+            </div>
+        </div>
+        <main class="container mt-5">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="img/face.jpeg" class="card-img-top" alt="Me" style="width: 20%; height: 20%;">
+                </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">About Me</h5>
+                    <p class="card-text">
+                        My name is Ben Hallock (duh), I was born in Spring Valley, Illinois on Monday, June
+                        21st 1993, I was a large headed child; constantly falling on my head, which only reinforced my
+                        large
+                        cranium. Please don't use any of this personal information to answer my online security
+                        questions. I am
+                        a super junior at Aurora University, studying Computer Science. This is my second time studying
+                        computer
+                        science, I dropped out of SIU:C film school to pursue programming in Chicago at the now deceased
+                        Mobile
+                        Makers Academy run by legendary Don Bora, and creator of Homebrew, Max Howell (@mxcl). I am a
+                        huge fan
+                        of of the native Chicago band, Fall Out Boy (concert shown below), I like to cook and hike, I
+                        have a
+                        white siberian husky named Luna at home, and I currently live with two cats Nova & Aurora and my
+                        girlfriend Alexis, in downtown Aurora. I'm currently pursuing a career in software development,
+                        and I'm
+                        looking for an internship for the summer of 2022. I'm currently experimenting with Stable
+                        Diffusion and
+                        other generative art techniques, and I'm writing half of this description with AI assistant
+                        Github
+                        Copilot.
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- 
+    <footer class="py-2 mt-4 text-white">
+        <p class="ml-5 text-left fs-0">&copy; 2024 Benjamin Hallock. All rights reserved.</p>
+    </footer> -->
 
-    <main>
-        <div class="container">
-            <h5 class="card-title">About Me</h5>
-            <p class="card-text">
-                My name is Ben Hallock (duh), I was born in Spring Valley, Illinois on Monday, June
-                21st 1993, I was a large headed child; constantly falling on my head, which only reinforced my large
-                cranium. Please don't use any of this personal information to answer my online security questions. I am
-                a super junior at Aurora University, studying Computer Science. This is my second time studying computer
-                science, I dropped out of SIU:C film school to pursue programming in Chicago at the now deceased Mobile
-                Makers Academy run by legendary Don Bora, and creator of Homebrew, Max Howell (@mxcl). I am a huge fan
-                of of the native Chicago band, Fall Out Boy (concert shown below), I like to cook and hike, I have a
-                white siberian husky named Luna at home, and I currently live with two cats Nova & Aurora and my
-                girlfriend Alexis, in downtown Aurora. I'm currently pursuing a career in software development, and I'm
-                looking for an internship for the summer of 2022. I'm currently experimenting with Stable Diffusion and
-                other generative art techniques, and I'm writing half of this description with AI assistant Github
-                Copilot.
-            </p>
-    </main>
-
-    <footer class="bg-light text-center py-3">
-        <p>&copy; 2022 Your Website. All rights reserved.</p>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

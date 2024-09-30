@@ -1,5 +1,24 @@
+:root {
+  --color-peach: #EFBC9B;
+  --color-cream: #FBF3D5;
+  --color-sage: #D6DAC8;
+  --color-teal: #9CAFAA;
+  --color-dark: #333333;
+  --color-white: #FFFFFF;
+}
+
+footer {
+  background-color: var(--color-sage);
+  color: var(--color-dark);
+}
+
+header {
+  background-color: var(--color-sage);
+  color: var(--color-dark);
+}
+
 a {
-  color: #007bff;
+  color: var(--color-teal);
   text-decoration: none;
   background-color: transparent;
   margin-top: 10px;
@@ -7,41 +26,167 @@ a {
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #f0f0f0;
+  background-color: var(--color-teal);
+  color: var(--color-dark);
 }
 
 .card {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-sage);
+  color: var(--color-dark);
+  transition: transform 0.3s ease-in-out;
 }
 
-h1, h2, h3, h4, h5, h6 {
+.card:hover {
+  transform: translateY(-5px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Merriweather', serif;
   font-weight: 700;
+  color: var(--color-dark);
 }
 
-p, li {
+p,
+li {
   font-weight: 300;
+  color: var(--color-dark);
 }
 
 .navbar {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-teal);
+  color: var(--color-white);
 }
 
-.fixed-height-carousel {
-  height: 400px;
-  overflow: hidden;
+.navbar a {
+  color: var(--color-white);
 }
 
-.fixed-height-carousel .carousel-inner,
-.fixed-height-carousel .carousel-item {
-  height: 100%;
+/* Carousel styles */
+.carousel-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--color-dark);
 }
 
-.fixed-height-carousel .carousel-item img {
-  object-fit: scale-down;
-  height: 100%;
+.carousel-inner {
   width: 100%;
+  height: 400px;
+}
+
+.carousel-item {
+  height: 100%;
+}
+
+.carousel-item img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
 }
 
 footer {
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-sage);
+  color: var(--color-dark);
+}
+
+.bg-teal {
+  background-color: var(--color-teal);
+  color: var(--color-white);
+}
+
+.bg-peach {
+  background-color: var(--color-peach);
+  color: var(--color-white);
+}
+
+/* Left-side navigation */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 280px;
+  z-index: 1000;
+  background-color: var(--color-teal);
+}
+
+.sidebar-toggle {
+  color: var(--color-white);
+}
+
+.content-wrapper {
+  margin-left: 280px;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+
+  .content-wrapper {
+    margin-left: 0;
+  }
+
+  #sidebarContent {
+    position: absolute;
+    width: 100%;
+    background-color: var(--color-teal);
+  }
+
+  .sidebar-toggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+  }
+}
+
+/* GitHub Projects Styles */
+.card-title {
+  color: var(--color-dark);
+}
+
+.card-text {
+  color: var(--color-dark);
+}
+
+.btn-outline-secondary {
+  color: var(--color-teal);
+  border-color: var(--color-teal);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-outline-secondary:hover {
+  color: var(--color-white);
+  background-color: var(--color-teal);
+  border-color: var(--color-teal);
+}
+
+.text-muted {
+  color: var(--color-dark) !important;
+  opacity: 0.6;
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: var(--color-white);
+}
+
+.sidebar .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .nav-link.active {
+  background-color: var(--color-peach);
+  color: var(--color-dark);
 }
