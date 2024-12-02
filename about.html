@@ -14,109 +14,154 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Merriweather:wght@700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <style>
+        .card {
+            height: 100%;
+            margin-bottom: 1rem;
+            margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+        }
+        .card-body {
+            padding: 1rem;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="sidebar" id="sidebar">
-        <button class="btn btn-link d-md-none mt-3 ms-3 sidebar-toggle" type="button" data-bs-toggle="collapse"
-            data-bs-target="#sidebarContent" aria-expanded="false" aria-controls="sidebarContent">
-            <i class="bi bi-list"></i>
-        </button>
-        <div class="collapse d-md-block" id="sidebarContent">
-            <div class="d-flex flex-column flex-shrink-0 p-3" style="width: 280px; height: 100vh;">
-                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <span class="fs-4">Benjamin Hallock</span>
-                </a>
-                <hr>
-                <ul class="nav nav-pills flex-column mb-auto">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Benjamin Hallock</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link" aria-current="page">
-                            <i class="bi bi-house-door me-2"></i>
-                            Home
-                        </a>
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
-                    <li>
-                        <a href="about.html" class="nav-link active">
-                            <i class="bi bi-person me-2"></i>
-                            About
-                        </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
                     </li>
-                    <li>
-                        <a href="projects.html" class="nav-link text-white">
-                            <i class="bi bi-briefcase me-2"></i>
-                            Projects
-                        </a>
-                    </li>
-                    <li>
-                        <a href="index.html#resume" class="nav-link text-white">
-                            <i class="bi bi-file-earmark-text me-2"></i>
-                            Resume
-                        </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
                     </li>
                 </ul>
-                <hr>
-                <div class="dropdown">
-                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-                        id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="./img/face.jpeg" alt="" width="32" height="32" class="rounded-circle me-2">
-                        <strong>Contact</strong>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                        <li><a class="dropdown-item" href="mailto:benjaminhallock@gmail.com">Email</a></li>
-                        <li><a class="dropdown-item" href="https://www.linkedin.com/in/benjaminhallock/">LinkedIn</a>
-                        </li>
-                        <li><a class="dropdown-item" href="https://github.com/benjaminhallock">GitHub</a></li>
-                    </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container mt-5">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>Benjamin Hallock</h3>
+                <p>Aurora, IL  &#x2022;  815-202-2662  &#x2022;  benjaminhallock@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">OBJECTIVE:</h5>
+                        <p class="card-text">Computer Science student seeking summer internship with potential to go part-time during the semester.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">EDUCATION:</h5>
+                        <p class="card-text">
+                            &#x2022; Aurora University, Aurora, IL<br>
+                            &#x2022; Bachelor of Science in Computer Science<br>
+                            &#x2022; GPA: 3.6
+                            <br>
+                            &#x2022; Expected Graduation: 2025
+                            <br>
+
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="content-wrapper">
-        <div class="card">
-            <div class="card-body">
-                <h1 class="text-center mb-5">About Me</h1>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">COURSEWORK:</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Data Structures and Algorithms</li>
+                            <li class="list-group-item">Object-Oriented Design</li>
+
+                            <li class="list-group-item">Test Validation, Fail &amp; QA</li>
+                            <li class="list-group-item">Computer Architecture</li>
+                            <li class="list-group-item">HTML, CSS, JavaScript</li>
+                            <li class="list-group-item">Python</li>
+                            <li class="list-group-item">C++</li>
+                            <li class="list-group-item">C#</li>
+                            <li class="list-group-item">Swift</li>
+                            <li class="list-group-item">Objective-C</li>
+                            <li class="list-group-item">SQL</li>
+                            <li class="list-group-item">PHP</li>
+                            <li class="list-group-item">Node.js</li>
+                            <li class="list-group-item">Express</li>
+                            <li class="list-group-item">MongoDB</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">WORK EXPERIENCE:</h5>
+                        <h6 class="card-subtitle">Cooper's Hawk Restaurant - Naperville, IL</h6>
+                        <p class="card-text">Dish/Prep</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Specialized in food service and cleaning.</li>
+                            <li class="list-group-item">Trained new hires, worked in assembly line settings.</li>
+                            <li class="list-group-item">Assisted in the creation, updating, and maintenance of chemical shelves.</li>
+                        </ul>
+                    </br>
+                        <h6 class="card-subtitle">Hy-Vee &#x2013; Peru, IL</h6>
+                        <p class="card-text">Meat/Deli/Cashier (March 2019 - June 2022)</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Specialized in deli and raw meat knowledge as well as kitchen safety.</li>
+                            <li class="list-group-item">Greeted customers and delivered products timely.</li>
+                            <li class="list-group-item">Assisted in updating and maintaining store shelves.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-        <main class="container mt-5">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <img src="img/face.jpeg" class="card-img-top" alt="Me" style="width: 20%; height: 20%;">
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">ACTIVITIES/HONORS:</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Computer Club AU</li>
+                            <li class="list-group-item">Hackathon Winner - Woof - <a
+                                    href="https://tinyurl.com/mv4zznjh">tinyurl.com/mv4zznjh</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h5 class="card-title">About Me</h5>
-                    <p class="card-text">
-                        My name is Ben Hallock (duh), I was born in Spring Valley, Illinois on Monday, June
-                        21st 1993, I was a large headed child; constantly falling on my head, which only reinforced my
-                        large
-                        cranium. Please don't use any of this personal information to answer my online security
-                        questions. I am
-                        a super junior at Aurora University, studying Computer Science. This is my second time studying
-                        computer
-                        science, I dropped out of SIU:C film school to pursue programming in Chicago at the now deceased
-                        Mobile
-                        Makers Academy run by legendary Don Bora, and creator of Homebrew, Max Howell (@mxcl). I am a
-                        huge fan
-                        of of the native Chicago band, Fall Out Boy (concert shown below), I like to cook and hike, I
-                        have a
-                        white siberian husky named Luna at home, and I currently live with two cats Nova & Aurora and my
-                        girlfriend Alexis, in downtown Aurora. I'm currently pursuing a career in software development,
-                        and I'm
-                        looking for an internship for the summer of 2022. I'm currently experimenting with Stable
-                        Diffusion and
-                        other generative art techniques, and I'm writing half of this description with AI assistant
-                        Github
-                        Copilot.
-                    </p>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">SKILLS:</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Independent and self-motivated</li>
+                            <li class="list-group-item">Problem-solving and critical thinking</li>
+                            <li class="list-group-item">Effective scrum/agile sprint planning</li>
+                            <li class="list-group-item">Adaptable and quick learner</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </main>
-    </div>
-    <!-- 
-    <footer class="py-2 mt-4 text-white">
-        <p class="ml-5 text-left fs-0">&copy; 2024 Benjamin Hallock. All rights reserved.</p>
-    </footer> -->
+        </div>
+      </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
