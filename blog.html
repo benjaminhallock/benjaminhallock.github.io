@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - Benjamin Hallock</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/photos.html">Photos</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li class="active"><a href="/blog.html">Blog</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <!-- Blog Post List -->
+      <section class="blog-post-list">
+        <h1>Blog Posts</h1>
+        
+        <!-- Blog Posts Container - Will be populated via JavaScript -->
+        <div id="blog-posts-container">
+            <!-- Blog posts will be dynamically loaded here -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <p>&copy; <span id="currentYear"></span> Benjamin Hallock. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <a href="#" id="backToTop" class="back-to-top">↑</a>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/blog.js"></script>
+  </body>
+</html>

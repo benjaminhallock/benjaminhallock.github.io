@@ -3,13 +3,14 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Benjamin Hallock -- Web Developer & Photographer -- @benjaminhallock
 
 # THANKS
 
-    <name>
+    HTML5 Boilerplate for the initial template
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5
-    Apache Server Configs, jQuery, Modernizr, Normalize.css
+    CSS3, HTML5, JavaScript
+    Normalize.css
+    GitHub Pages

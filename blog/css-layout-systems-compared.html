@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Layout Systems Compared - Benjamin Hallock</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/photos.html">Photos</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li class="active"><a href="/blog.html">Blog</a></li>
+        </ul>
+    </nav>  
+    <main>
+        <article class="blog-post-full">
+            <header class="blog-header">
+                <h1>CSS Layout Systems Compared</h1>
+                <div class="blog-meta">
+                    <span class="blog-date">October 15, 2023</span>
+                    <span class="blog-tags">
+                        <a href="/blog/tag/css">CSS</a>,
+                        <a href="/blog/tag/layout">Layout</a>,
+                        <a href="/blog/tag/design">Design</a>
+                    </span>
+                </div>
+            </header>
+
+            <div class="blog-content">
+                <p>In this post, we will compare different CSS layout systems including Flexbox, Grid, and traditional box model techniques.</p>
+
+                <h2>Flexbox</h2>
+                <p>Flexbox is a one-dimensional layout system that allows you to align items in a row or column.</p>
+
+                <pre><code>.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}</code></pre>
+
+                <h2>Grid</h2>
+                <p>CSS Grid is a two-dimensional layout system that allows you to create complex layouts with rows and columns.</p>
+
+                <pre><code>.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 10px;
+}</code></pre>
+
+                <h2>Box Model</h2>
+                <p>The traditional box model uses margins, borders, and padding to create layouts.</p>
+
+                <pre><code>.box {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #000;
+}</code></pre>
+
+                <h2>Conclusion</h2>
+                <p>Each layout system has its strengths and weaknesses. Flexbox is great for one-dimensional layouts, Grid is perfect for two-dimensional layouts, and the box model is useful for traditional layouts.</p>
+            </div>
+        </article>
+    </main>
+</body>
+</html>

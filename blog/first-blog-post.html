@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My First Blog Post - Benjamin Hallock</title>
+  <meta name="description" content="This is my first blog post about web development and design principles.">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/photos.html">Photos</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li class="active"><a href="/blog.html">Blog</a></li>
+    </ul>
+  </nav>
+  
+  <main>
+    <article class="blog-post-full">
+      <header class="blog-header">
+        <h1>My First Blog Post</h1>
+        <div class="blog-meta">
+          <span class="blog-date">May 15, 2023</span>
+          <span class="blog-tags">
+            <a href="/blog/tag/web-development">web development</a>,
+            <a href="/blog/tag/design">design</a>
+          </span>
+        </div>
+      </header>
+      
+      <div class="blog-content">
+        <p>This is my first blog post about web development and design principles. In this post, I'll share some insights I've learned over the years.</p>
+        
+        <h2>Getting Started with Web Development</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim.</p>
+        
+        <h2>Design Principles to Follow</h2>
+        <p>Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam.</p>
+        
+        <pre><code>// Sample code example
+function createComponent() {
+  const element = document.createElement('div');
+  element.classList.add('component');
+  return element;
+}
+</code></pre>
+        
+        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum.</p>
+        
+        <blockquote>
+          <p>Good design is as little design as possible. Less, but better – because it concentrates on the essential aspects, and the products are not burdened with non-essentials.</p>
+          <cite>— Dieter Rams</cite>
+        </blockquote>
+      </div>
+      
+      <div class="blog-footer">
+        <div class="blog-author">
+          <img src="/img/bengi.jpeg" alt="Benjamin Hallock" class="author-image">
+          <div class="author-info">
+            <h3>Written by Benjamin Hallock</h3>
+            <p>Web developer and photographer with a passion for clean design and usable interfaces.</p>
+          </div>
+        </div>
+        
+        <div class="blog-navigation">
+          <div class="blog-nav-prev">
+            <!-- This would link to the previous post -->
+          </div>
+          <div class="blog-nav-next">
+        <!-- Load the next post dynamically -->
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+  
+  <footer>
+    <div class="social-links">
+      <a href="#" aria-label="GitHub"><span>GH</span></a>
+      <a href="#" aria-label="LinkedIn"><span>LI</span></a>
+      <a href="#" aria-label="Instagram"><span>IG</span></a>
+    </div>
+    <p>&copy; <span id="currentYear"></span> Benjamin Hallock. All rights reserved.</p>
+  </footer>
+
+  <a href="#" class="back-to-top" id="backToTop">↑</a>
+  <script src="/js/main.js"></script>
+</body>
+</html>

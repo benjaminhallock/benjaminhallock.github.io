@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Async Patterns - Benjamin Hallock</title>
+    <meta name="description" content="A comprehensive guide to JavaScript asynchronous patterns including callbacks, promises, and async/await.">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/photos.html">Photos</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li class="active"><a href="/blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="blog-post-full">
+            <header class="blog-header">
+                <h1>JavaScript Async Patterns</h1>
+                <div class="blog-meta">
+                    <span class="blog-date">March 19, 2025</span>
+                    <span class="blog-tags">
+                        <a href="/blog/tag/javascript">JavaScript</a>, 
+                        <a href="/blog/tag/async">Async</a>, 
+                        <a href="/blog/tag/patterns">Patterns</a>
+                    </span>
+                </div>
+            </header>
+
+            <div class="blog-content">
+                <p>In this post, we will explore various asynchronous patterns in JavaScript, including callbacks, promises, and async/await.</p>
+
+                <h2>Callbacks</h2>
+                <p>Callbacks are functions passed as arguments to other functions. They are executed after the completion of a task.</p>
+
+                <pre><code>// Example of a callback
+function fetchData(callback) {
+    setTimeout(() => {
+        const data = { id: 1, name: 'John Doe' };
+        callback(data);
+    }, 1000);
+}
+
+// Example of using fetchData
+fetchData((data) => {
+    console.log('Fetched data:', data);
+});
+</code></pre>
+
+                <p>While callbacks work well for simple operations, they can lead to "callback hell" when dealing with multiple asynchronous operations.</p>
+
+                <h2>Promises</h2>
+                <p>Promises provide a more elegant way to handle asynchronous operations. A promise represents a value that may not be available yet.</p>
+
+                <pre><code>// Converting the callback example to a promise
+function fetchDataPromise() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const data = { id: 1, name: 'John Doe' };
+            resolve(data);
+            // If there was an error, we could call: reject(error)
+        }, 1000);
+    });
+}
+
+// Using the promise
+fetchDataPromise()
+    .then(data => {
+        console.log('Fetched data:', data);
+        return processData(data);
+    })
+    .then(processedData => {
+        console.log('Processed data:', processedData);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+
+function processData(data) {
+    return { ...data, processed: true };
+}</code></pre>
+
+                <p>Promises provide better error handling with the <code>.catch()</code> method and allow for chaining multiple asynchronous operations.</p>
+
+                <h2>Async/Await</h2>
+                <p>Async/await is syntactic sugar over promises, making asynchronous code look and behave more like synchronous code.</p>
+
+                <pre><code>// Using async/await with our fetchDataPromise function
+async function fetchAndProcessData() {
+    try {
+        const data = await fetchDataPromise();
+        console.log('Fetched data:', data);
+        
+        const processedData = await processData(data);
+        console.log('Processed data:', processedData);
+        
+        return processedData;
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+// Call the async function
+fetchAndProcessData().then(result => {
+    console.log('Final result:', result);
+});</code></pre>
+
+                <p>Async/await makes the code more readable and maintainable, especially for complex asynchronous operations. The <code>await</code> keyword can only be used inside an <code>async</code> function.</p>
+
+                <h2>Practical Comparison</h2>
+                <p>Let's compare these patterns with a practical example of fetching data from an API:</p>
+
+                <h3>Using Callbacks</h3>
+                <pre><code>function getUser(userId, callback) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', `https://api.example.com/users/${userId}`);
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            callback(null, JSON.parse(xhr.responseText));
+        } else {
+            callback(new Error(`Request failed: ${xhr.status}`));
+        }
+    };
+    xhr.onerror = function() {
+        callback(new Error('Network error'));
+    };
+    xhr.send();
+}</code></pre>
+
+                <h3>Using Promises</h3>
+                <pre><code>function getUser(userId) {
+    return fetch(`https://api.example.com/users/${userId}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Request failed: ${response.status}`);
+            }
+            return response.json();
+        });
+}</code></pre>
+
+                <h3>Using Async/Await</h3>
+                <pre><code>async function getUser(userId) {
+    const response = await fetch(`https://api.example.com/users/${userId}`);
+    
+    if (!response.ok) {
+        throw new Error(`Request failed: ${response.status}`);
+    }
+    
+    return response.json();
+}</code></pre>
+
+                <h2>Conclusion</h2>
+                <p>Each asynchronous pattern in JavaScript has its use cases:</p>
+
+                <ul>
+                    <li><strong>Callbacks:</strong> Simple operations and working with older APIs</li>
+                    <li><strong>Promises:</strong> Improved error handling and chaining multiple operations</li>
+                    <li><strong>Async/Await:</strong> Most readable approach for complex asynchronous logic</li>
+                </ul>
+
+                <p>Modern JavaScript development leans heavily toward Promises and Async/Await for their readability and maintainability. When dealing with asynchronous code, choose the pattern that makes your code most understandable to yourself and others.</p>
+            </div>
+            
+            <div class="blog-footer">
+                <div class="blog-author">
+                    <img src="/img/bengi.jpeg" alt="Benjamin Hallock" class="author-image">
+                    <div class="author-info">
+                        <h3>Written by Benjamin Hallock</h3>
+                        <p>Web developer and photographer with a passion for clean design and usable interfaces.</p>
+                    </div>
+                </div>
+                
+                <div class="blog-navigation">
+                    <div class="blog-nav-prev">
+                        <a href="/blog/first-blog-post.html">← Previous Post</a>
+                    </div>
+                    <div class="blog-nav-next">
+                        <!-- Next post link will go here -->
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+    
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/benjaminhallock" aria-label="GitHub"><span>GH</span></a>
+            <a href="https://linkedin.com/in/benjaminhallock" aria-label="LinkedIn"><span>LI</span></a>
+            <a href="https://instagram.com/benjaminhallock" aria-label="Instagram"><span>IG</span></a>
+        </div>
+        <p>&copy; <span id="currentYear"></span> Benjamin Hallock. All rights reserved.</p>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+    <script src="/js/main.js"></script>
+</body>
+</html>
