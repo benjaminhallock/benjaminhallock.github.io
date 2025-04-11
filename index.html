@@ -2,311 +2,117 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
     <title>Benjamin Hallock</title>
-    <meta name="description" content="Personal website and portfolio of Benjamin Hallock, featuring photography and web development work">
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="js/blog.js" defer></script>
+    <meta
+      name="description"
+      content="Personal website and portfolio of Benjamin Hallock, featuring photography and web development work" />
+    <link
+      rel="icon"
+      href="/favicon.ico"
+      type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="css/normalize.css" />
+    <link
+      rel="stylesheet"
+      href="css/main.css" />
+    <link
+      rel="stylesheet"
+      href="css/style.css" />
+    <script
+      src="js/blog.js"
+      defer></script>
   </head>
   <body>
     <nav>
       <ul>
         <li class="active"><a href="index.html">Home</a></li>
         <li><a href="photos.html">Photos</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="blog.html">Blog</a></li>
+        <li><a href="/blog.html">Blog</a></li>
       </ul>
     </nav>
     <main>
-      <header>
-        <img src="img/bengi.jpeg" alt="Benjamin Hallock" class="profile-pic" />
+      <header class="header">
         <h1>Hi! I'm Bengi</h1>
         <p>This is my personal portfolio showcasing my photography and web development work.</p>
       </header>
 
       <!-- Blog Section - New -->
-      <section id="blog-section" class="blog-section">
+      <section
+        id="blog-section"
+        class="blog-section">
         <h2>Latest from the Blog</h2>
         <p>Check out my latest thoughts, tutorials, and insights.</p>
-        
+
         <div id="blog-posts-container">
           <!-- Blog posts will be loaded here dynamically -->
           <div class="loading">Loading posts...</div>
         </div>
-        
+
         <div class="text-center mt-4">
-          <a href="/blog.html" class="btn">View All Posts</a>
-        </div>
-      </section>
-
-      <!-- New Interactive Features Section -->
-      <section id="interactive-features">
-        <h2>Interactive Features</h2>
-        <p>Below are some interactive elements that demonstrate my JavaScript and CSS skills.</p>
-        
-        <!-- Skill Bars -->
-        <div class="skills-container">
-          <h3>My Skills</h3>
-          <div class="skill-bar">
-            <div class="skill-name">HTML5 <span>95%</span></div>
-            <div class="skill-bar-container">
-              <div class="skill-bar-progress" data-width="95%"></div>
-            </div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-name">CSS3 <span>90%</span></div>
-            <div class="skill-bar-container">
-              <div class="skill-bar-progress" data-width="90%"></div>
-            </div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-name">JavaScript <span>85%</span></div>
-            <div class="skill-bar-container">
-              <div class="skill-bar-progress" data-width="85%"></div>
-            </div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-name">Photography <span>92%</span></div>
-            <div class="skill-bar-container">
-              <div class="skill-bar-progress" data-width="92%"></div>
-            </div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-name">UI/UX Design <span>80%</span></div>
-            <div class="skill-bar-container">
-              <div class="skill-bar-progress" data-width="80%"></div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Interactive Modal trigger and Modal -->
-        <div class="text-center mt-4 mb-4">
-          <button data-modal-trigger="projectModal">View Project Details</button>
-        </div>
-        
-        <div id="projectModal" class="modal">
-          <div class="modal-content">
-            <button class="modal-close">×</button>
-            <h2>Project Showcase</h2>
-            <p>This is an example of a custom modal component built with pure JavaScript and CSS.</p>
-            <p>Modals are great for displaying additional information without navigating away from the current page.</p>
-            <p>This modal includes animations, keyboard accessibility (try pressing ESC), and click-outside-to-close functionality.</p>
-          </div>
-        </div>
-        
-        <!-- Feature Cards -->
-        <div class="mt-5 mb-3">
-          <h3>Featured Services</h3>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
-            <div class="feature-card">
-              <div class="feature-icon">W</div>
-              <h3>Web Design</h3>
-              <p>Creating beautiful, responsive websites that look great on all devices.</p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-icon">P</div>
-              <h3>Photography</h3>
-              <p>Professional photography services for all your creative needs.</p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-icon">D</div>
-              <h3>Development</h3>
-              <p>Full-stack development with modern frameworks and technologies.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Typography Section -->
-      <section>
-        <h2>Typography</h2>
-        
-        <h1>Heading Level 1</h1>
-        <h2>Heading Level 2</h2>
-        <h3>Heading Level 3</h3>
-        <h4>Heading Level 4</h4>
-        <h5>Heading Level 5</h5>
-        <h6>Heading Level 6</h6>
-        
-        <p>This is a standard paragraph with some <a href="#">linked text</a> included. The styling includes proper line height, font family, and spacing to ensure readability across devices.</p>
-        
-        <ul>
-          <li>Unordered list item 1</li>
-          <li>Unordered list item 2</li>
-          <li>Unordered list item with <a href="#">a link</a></li>
-        </ul>
-        
-        <ol>
-          <li>Ordered list item 1</li>
-          <li>Ordered list item 2</li>
-          <li>Ordered list item with <a href="#">a link</a></li>
-        </ol>
-      </section>
-
-      <!-- Component Examples -->
-      <section>
-        <h2>Component Examples</h2>
-        
-        <!-- Tag Group Example -->
-        <div class="tag-group">
-          <h2>Tag Group Example</h2>
-          <ul>
-            <li>Item One</li>
-            <li>Item Two</li>
-            <li>Item Three</li>
-            <li>Item Four</li>
-          </ul>
-        </div>
-        
-        <!-- Article Example -->
-        <article>
-          <h3>Article Component</h3>
-          <p>This is an example of the article component with a border-left accent and hover effects. Articles are designed to contain related content and provide visual separation.</p>
-        </article>
-        
-        <!-- Aside Example -->
-        <aside>
-          <h3>Aside Component</h3>
-          <p>This aside element is styled with a light background and accent border. It's perfect for supplementary content, notes, or callouts.</p>
-        </aside>
-        
-        <!-- Details/Summary Example -->
-        <details>
-          <summary>Click to expand details</summary>
-          <div class="p-2">
-            <p>This is the expanded content of the details element. It demonstrates the interactive disclosure widget with custom styling.</p>
-          </div>
-        </details>
-        
-        <!-- Figure Example -->
-        <figure>
-          <div style="height: 150px; background-color: var(--mid-gray); display: flex; align-items: center; justify-content: center;">
-            [Placeholder for image]
-          </div>
-          <figcaption>A caption for the figure element above</figcaption>
-        </figure>
-      </section>
-      
-      <!-- Code Examples -->
-      <section>
-        <h2>Code Examples</h2>
-        
-        <p>Here is an example of <code>inline code</code> within a paragraph.</p>
-        
-        <pre><code>// This is a code block example
-function greet(name) {
-  return `Hello, ${name}!`;
-}
-
-console.log(greet('World'));</code></pre>
-      </section>
-      
-      <!-- Table Example -->
-      <section>
-        <h2>Table Example</h2>
-        
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Position</th>
-              <th>Location</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>John Doe</td>
-              <td>Developer</td>
-              <td>New York</td>
-            </tr>
-            <tr>
-              <td>Jane Smith</td>
-              <td>Designer</td>
-              <td>San Francisco</td>
-            </tr>
-            <tr>
-              <td>James Johnson</td>
-              <td>Manager</td>
-              <td>Chicago</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      
-      <!-- Form Elements -->
-      <section>
-        <h2>Form Elements</h2>
-        
-        <form>
-          <div class="mb-3">
-            <label for="text-input">Text Input:</label>
-            <input type="text" id="text-input" placeholder="Enter some text">
-          </div>
-          
-          <div class="mb-3">
-            <label for="email-input">Email Input:</label>
-            <input type="email" id="email-input" placeholder="email@example.com">
-          </div>
-          
-          <div class="mb-3">
-            <label for="select-input">Select Input:</label>
-            <select id="select-input">
-              <option value="" disabled selected>Choose an option</option>
-              <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option>
-              <option value="option3">Option 3</option>
-            </select>
-          </div>
-          
-          <div class="mb-3">
-            <label for="textarea">Textarea:</label>
-            <textarea id="textarea" rows="4" placeholder="Enter multiple lines of text"></textarea>
-          </div>
-          
-          <button type="submit">Submit Button</button>
-          <input type="reset" value="Reset Button" class="mt-1">
-        </form>
-      </section>
-      
-      <!-- Utility Classes -->
-      <section>
-        <h2>Utility Classes</h2>
-        
-        <div class="text-center mb-3 p-2" style="background-color: var(--light-gray);">
-          <p>Text Center</p>
-        </div>
-        
-        <div class="text-right mb-3 p-2" style="background-color: var(--light-gray);">
-          <p>Text Right</p>
-        </div>
-        
-        <div class="text-left mb-3 p-2" style="background-color: var(--light-gray);">
-          <p>Text Left</p>
-        </div>
-        
-        <div class="mb-5 p-2" style="background-color: var(--light-gray);">
-          <p>Margin Bottom 5</p>
-        </div>
-        
-        <div class="mt-3 p-2" style="background-color: var(--light-gray);">
-          <p>Margin Top 3</p>
+          <a
+            href="/blog.html"
+            class="btn"
+            >View All Posts</a
+          >
         </div>
       </section>
     </main>
-    
+
     <footer>
       <div class="social-links">
-        <a href="#" aria-label="GitHub"><span>GH</span></a>
-        <a href="#" aria-label="LinkedIn"><span>LI</span></a>
-        <a href="#" aria-label="Instagram"><span>IG</span></a>
+        <a
+          href="https://github.com/benjaminhallock"
+          aria-label="GitHub"
+          class="social-icon">
+          <svg
+            viewBox="0 0 24 24"
+            width="24"
+            height="24">
+            <path
+              fill="currentColor"
+              d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+          </svg>
+        </a>
+        <a
+          href="https://linkedin.com/in/benjaminhallock"
+          aria-label="LinkedIn"
+          class="social-icon">
+          <svg
+            viewBox="0 0 24 24"
+            width="24"
+            height="24">
+            <path
+              fill="currentColor"
+              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+          </svg>
+        </a>
+        <a
+          href="https://instagram.com/benjaminhallock"
+          aria-label="Instagram"
+          class="social-icon">
+          <svg
+            viewBox="0 0 24 24"
+            width="24"
+            height="24">
+            <path
+              fill="currentColor"
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+          </svg>
+        </a>
       </div>
       <p>&copy; <span id="currentYear"></span> Benjamin Hallock. All rights reserved.</p>
     </footer>
 
-    <a href="#" class="back-to-top" id="backToTop">↑</a>
+    <a
+      href="#"
+      class="back-to-top"
+      id="backToTop"
+      >↑</a
+    >
     <script src="js/main.js"></script>
   </body>
 </html>

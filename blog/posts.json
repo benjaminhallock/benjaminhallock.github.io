@@ -1,26 +1,37 @@
 [
   {
-    "id": "first-blog-post",
-    "title": "My first blog post",
+    "id": "javascript-async-patterns",
+    "title": "JavaScript Async Patterns",
     "date": "2025-03-19",
-    "excerpt": "An introduction to my blog and what you can expect to find here.",
-    "url": "/blog/first-blog-post.html",
-    "tags": ["accessibility", "web development"]
-  },
-  {
-    "id": "second-blog-post",
-    "title": "CSS Grid and Flexbox: When to Use Each Layout System",
-    "date": "2025-03-19",
-    "excerpt": "A practical comparison of CSS Grid and Flexbox with guidance on appropriate use cases for each.",
-    "url": "/blog/css-layout-systems-compared.html",
-    "tags": ["CSS", "layouts"]
-  },
-  {
-    "id": "third-blog-post",
-    "title": "Modern JavaScript Patterns: From Callbacks to Async/Await",
-    "date": "2025-03-19",
-    "excerpt": "Examining the evolution of asynchronous programming patterns in JavaScript and their practical applications.",
+    "excerpt": "A comprehensive guide to JavaScript asynchronous patterns including callbacks, promises, and async/await.",
     "url": "/blog/javascript-async-patterns.html",
-    "tags": ["JavaScript", "async"]
+    "tags": [
+      "JavaScript",
+      "Async",
+      "Patterns"
+    ]
+  },
+  {
+    "id": "css-layout-systems-compared",
+    "title": "CSS Layout Systems Compared",
+    "date": "2023-10-15",
+    "excerpt": "",
+    "url": "/blog/css-layout-systems-compared.html",
+    "tags": [
+      "CSS",
+      "Layout",
+      "Design"
+    ]
+  },
+  {
+    "id": "first-blog-post",
+    "title": "My First Blog Post",
+    "date": "2023-05-15",
+    "excerpt": "This is my first blog post about web development and design principles.",
+    "url": "/blog/first-blog-post.html",
+    "tags": [
+      "web development",
+      "design"
+    ]
   }
 ]
