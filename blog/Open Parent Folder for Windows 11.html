@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>My First Blog Post - Benjamin Hallock</title>
+    <meta
+      name="description"
+      content="This is my first blog post about web development and design principles." />
+    <link
+      rel="icon"
+      href="/favicon.ico"
+      type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="/css/normalize.css" />
+    <link
+      rel="stylesheet"
+      href="/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="/css/style.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/photos.html">Photos</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li class="active"><a href="/blog.html">Blog</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article class="blog-post-full">
+        <header class="blog-header">
+          <h1>My First Blog Post</h1>
+          <div class="blog-meta">
+            <span class="blog-date">May 15, 2023</span>
+            <span class="blog-tags">
+              <a href="/blog/tag/web-development">web development</a>,
+              <a href="/blog/tag/design">design</a>
+            </span>
+          </div>
+        </header>
+        <div class="blog-content">
+          <p>
+            Windows 11 does not have an option to "Open Parent Folder" from the context menu, but we
+            can restore it with a simple registry edit.
+          </p>
+
+          <p>I've created two registry files that you can download:</p>
+
+          <div class="download-section">
+            <div class="download-item">
+              <img
+                src="/images/regedit-icon.png"
+                alt="Registry Editor Icon"
+                class="reg-icon" />
+              <a
+                href="/public/open parent folder/open parent folder -folder.reg"
+                download
+                >Enable Open Parent Folder for folders</a
+              >
+              <small>Adds the functionality back</small>
+            </div>
+
+            <div class="download-section">
+              <div class="download-item">
+                <img
+                  src="/images/regedit-icon.png"
+                  alt="Registry Editor Icon"
+                  class="reg-icon" />
+                <a
+                  href="/public/open parent folder/open parent folder -file.reg"
+                  download
+                  >Enable Open Parent Folder for files</a
+                </a>
+                <small>Adds the functionality back</small>
+              </div>
+
+              <div class="download-item">
+                <img
+                  src="/images/regedit-icon.png"
+                  alt="Registry Editor Icon"
+                  class="reg-icon" />
+                <a
+                  href="/public/open parent folder/Disable_Open_Parent_Folder.reg"
+                  download
+                  >Disable Open Parent Folder</a>
+                <small>Removes the functionality if needed</small>
+              </div>
+            </div>
+
+            <p>
+              Simply download and run the registry file you want. You'll need to restart File
+              Explorer or your computer for changes to take effect.
+            </p>
+
+            <p>
+              <em>Note:</em> Always be careful when editing the Windows Registry. Make sure to
+              backup your registry or create a system restore point before making changes.
+            </p>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer>
+      <div class="social-links">
+        <a
+          href="#"
+          aria-label="GitHub"
+          ><span>GH</span></a
+        >
+        <a
+          href="#"
+          aria-label="LinkedIn"
+          ><span>LI</span></a
+        >
+        <a
+          href="#"
+          aria-label="Instagram"
+          ><span>IG</span></a
+        >
+      </div>
+      <p>&copy; <span id="currentYear"></span> Benjamin Hallock. All rights reserved.</p>
+    </footer>
+
+    <a
+      href="#"
+      class="back-to-top"
+      id="backToTop"
+      >↑</a
+    >
+    <script src="/js/main.js"></script>
+  </body>
+</html>

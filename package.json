@@ -6,10 +6,10 @@
   "license": "",
   "author": "",
   "scripts": {
-    "sync": "node scripts/sync-blog-posts.js"
+    "sync": "node scripts/sync-blog-posts.js && node scripts/sync-header-footer.js --sync"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.4",
-    "cheerio": "^1.0.0-rc.12"
+    "cheerio": "^1.0.0",
+    "parcel-bundler": "^1.12.4"
   }
 }
