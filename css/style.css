@@ -55,7 +55,7 @@ footer,
 nav {
   background-color: var(--bg-medium);
   color: var(--text-primary);
-  padding: 1rem;
+  padding: 0.5rem;
   text-align: center;
   border-radius: var(--border-radius);
   transition: background-color var(--transition-speed), color var(--transition-speed);
@@ -64,13 +64,86 @@ nav {
 nav {
   font-family: var(--font-headers);
   background-color: var(--bg-medium);
-  padding: 1.2rem;
+  padding: 1rem;
   box-shadow: var(--box-shadow);
   border-bottom: 2px solid var(--accent);
   backdrop-filter: blur(8px);
   position: sticky;
   top: 0;
   z-index: 1000;
+  margin-bottom: 1rem;
+  width: 100%;
+  padding: 0.5rem;
+
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+      cursor: pointer;
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      z-index: 100;
+      padding: 10px;
+      background-color: var(--bg-dark);
+      border: 1px solid var(--accent);
+      border-radius: var(--border-radius);
+      transition: all var(--transition-speed);
+    }
+
+    .hamburger:hover {
+      background-color: var(--bg-medium);
+    }
+
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      background-color: var(--text-bright);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+    ul {
+      position: fixed;
+      left: -100%;
+      top: 0;
+      flex-direction: column;
+      background-color: var(--bg-dark);
+      width: 100%;
+      height: 100vh;
+      text-align: center;
+      transition: 0.3s;
+      padding-top: 4rem;
+      gap: 2rem;
+      opacity: 0.98;
+      box-shadow: var(--box-shadow);
+      z-index: 99;
+    }
+
+    ul.active {
+      left: 0;
+      background-color: var(--bg-dark);
+    }
+
+    ul li {
+      margin: 1rem 0;
+    }
+
+    ul li a {
+      font-size: 1.2rem;
+    }
+  }
   transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
 }
 
@@ -95,7 +168,6 @@ article:hover,
   border-color: var(--accent);
 }
 
-/* Typography - brightest */
 h1,
 h2,
 h3,
@@ -110,7 +182,13 @@ h6 {
   background-color: transparent;
   letter-spacing: -0.5px;
 }
-
+h4,
+h5,
+h6 {
+  padding: 1.5rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--bg-light);
+}
 h1 {
   font-size: 2.8rem;
   letter-spacing: -1px;
