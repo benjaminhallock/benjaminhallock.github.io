@@ -25,8 +25,34 @@ function processHtmlFile(filePath) {
   const content = fs.readFileSync(filePath, 'utf8')
   const $ = cheerio.load(content)
 
-  // Replace nav
-  $('nav').replaceWith(templateNav)
+  // Get the nav from the template but modify it to set the active class
+  const $navTemplate = cheerio.load(templateNav)
+
+  // Remove active class from all nav items
+  $navTemplate('li').removeClass('active')
+
+  // Set active class based on current file
+  const currentPage = fileName.toLowerCase()
+
+  // Match the current page with the corresponding nav item
+  $navTemplate('li a').each((i, el) => {
+    const href = $navTemplate(el).attr('href')
+    if (href) {
+      const linkPage = path.basename(href).toLowerCase()
+      if (linkPage === currentPage) {
+        $navTemplate(el).parent().addClass('active')
+      } else if (currentPage.includes('blog') && href.includes('blog')) {
+        // Special case for blog pages
+        $navTemplate(el).parent().addClass('active')
+      } else if (currentPage === 'index.html' && (href === '/' || href.includes('index'))) {
+        // Special case for home page
+        $navTemplate(el).parent().addClass('active')
+      }
+    }
+  })
+
+  // Replace nav with modified version
+  $('nav').replaceWith($navTemplate.html())
 
   // Replace footer
   $('footer').replaceWith(templateFooter)
@@ -49,7 +75,7 @@ function processHtmlFile(filePath) {
 
   // Write the updated content back to file
   fs.writeFileSync(filePath, $.html())
-  console.log(`Updated ${filePath}`)
+  console.log(`Updated ${filePath} - Set active nav for ${currentPage}`)
 }
 
 // Get all HTML files in the root directory
