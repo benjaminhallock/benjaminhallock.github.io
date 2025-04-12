@@ -50,7 +50,7 @@ async function syncBlogPosts() {
       // Create post object
       const post = {
         id,
-        title,
+        title: id, // Use id as the title instead of extracting from HTML
         date,
         excerpt,
         url: `/blog/${file}`,
