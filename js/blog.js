@@ -31,12 +31,12 @@ async function renderBlogPosts() {
   
   // Generate HTML for each post
   const postsHTML = posts.map(post => `
-    <article class="blog-post">
+    <div class="blog-post-card">
       <div class="blog-post-date">${formatDate(post.date)}</div>
       <h3><a href="${post.url}">${post.title}</a></h3>
       <p>${post.excerpt}</p>
       <a href="${post.url}" class="read-more">Read more →</a>
-    </article>
+    </div>
   `).join('');
   
   blogContainer.innerHTML = postsHTML;
