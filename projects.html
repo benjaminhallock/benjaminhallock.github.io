@@ -55,8 +55,9 @@
             style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
           <h3>Weeks 1-2</h3>
           <p>
-            Sprint 1 was spent working out the details of the game and getting a working full-stack
-            with authentication login.
+            The goal was to making a functional multiplayer game where a player can draw an image on
+            the screen, and the other members of the lobby guess the word in the chatbox. We spent
+            sprint 1 setting up the login/register rest api calls.
           </p>
 
           <img
@@ -65,9 +66,9 @@
             style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
           <h3>Weeks 3-4</h3>
           <p>
-            We started building the core game which required setting up a lobby with a list of
-            players. Any player can join by copying the link to the lobby into the URL bar or Create
-            Lobby page.
+            At the core of the game, we wanted some variables in the game that we could control. We
+            started developing a logo and background theme. Our main inspiration was skribbl.io so
+            we tried to mimic that game as much as possible.
           </p>
 
           <img
@@ -76,11 +77,10 @@
             style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
           <h3>Weeks 5-6</h3>
           <p>
-            Up until this point, were were sending REST API requets for all the data from front to
-            back. For the game we needed to utilize websocket packages for Node/React. This requires
-            creating a singleton on both the front and the back end, which actively monitors for any
-            communication from a client/server, then callbacks to the appropriate functions. All
-            aspects of the game including chat, drawing,
+            All aspects of the game including chat, drawing, and word-selection use the WebSocket
+            package on the frontend and backend. This is essentially two singletons playing ping
+            pong, both waiting for keywords to callback functions for the server/client to process.
+            This happends in realtime, sending out a mass-message to all players in the lobby.
           </p>
 
           <img
@@ -89,10 +89,10 @@
             style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
           <h3>Week 5-6</h3>
           <p>
-            The entire game runs on timers associated with the server. The server sends out new
-            events to update the client. Once the "drawer" picks a word, they have a limited time to
-            draw and let others guess the word in the chat box. Any correct guesses are show but not
-            reveal. Once time runs out or everyone guessed, the round ends.
+            Once the game starts, the server is essentially running "on-rails" with a timer. The
+            client selects a word, they start drawing, other players can see said drawing and guess
+            in the chat. Obviously, the word is not shared until the end. Guessing correctly rewards
+            the drawer and the person guesssing. If time runs out we move onto the next drawer.
           </p>
 
           <img
@@ -122,12 +122,11 @@
             style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
           <h3>Conclusion</h3>
           <p>
-            A functional game with user control and sound effects was created using a full-stack
-            MERN application. We have working login with validation using REST API. We have some
-            variables to control how the game operates. We handled multiple users logging in at
-            different times to accomidate the gameplay. Live drawing can be done by all lobby users
-            before the game starts. The game runs on a timer thanks to the WebSocket singleton on
-            the Node server ochestrating when the clients change views.
+            Our biggest hurdles were getting the websockets to sync across devices. This included
+            getting the drawing aspect to work, as well as running the whole show on a timer that
+            could allow users to join the game at any time. Not only are we transmitting data in
+            realtime we're also saving it to the database, so we have be prepared to load that at
+            any time should someone disconnect.
           </p>
         </div>
       </article>
@@ -136,7 +135,10 @@
         <div class="blog-content">
           <h2>Raspberry Pi Camera Die Counter</h2>
           <p>
-            This is a 3-man project where we were instructed to make a raspberry pi hardware setup which could use a python script to execute any hardware such as a breadboard with buttons. We chose to use a camera as an input device. I wanted to read and image and output data on screen, so we chose dice as the calculation.
+            This is a 3-man project where we were instructed to make a raspberry pi hardware setup
+            which could use a python script to execute any hardware such as a breadboard with
+            buttons. We chose to use a camera as an input device. I wanted to read and image and
+            output data on screen, so we chose dice as the calculation.
           </p>
           <img
             src="/img/p1_1.jpeg"
@@ -145,7 +147,10 @@
 
           <h3>Design and Planning</h3>
           <p>
-            In order to make a complicated python script, we used a AI-assistant to build a script that could not only take an image, but isolate the black dies on the image and return the correct sum. We needed a platform to build this on so I drafted a 3-d box-like structure using a web-app, then printed it in the schools 3d lab. 
+            In order to make a complicated python script, we used a AI-assistant to build a script
+            that could not only take an image, but isolate the black dies on the image and return
+            the correct sum. We needed a platform to build this on so I drafted a 3-d box-like
+            structure using a web-app, then printed it in the schools 3d lab.
           </p>
 
           <img
@@ -155,7 +160,9 @@
 
           <h3>Initial Build</h3>
           <p>
-            Initially the code would not recognize all the dice correctly. Using some prompt-driven development, I guided it to correct the errors in the image and successfully isolated the individual dies on screen.
+            Initially the code would not recognize all the dice correctly. Using some prompt-driven
+            development, I guided it to correct the errors in the image and successfully isolated
+            the individual dies on screen.
           </p>
 
           <img
