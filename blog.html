@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,27 +15,32 @@
       href="/css/normalize.css" />
     <link
       rel="stylesheet"
-      f
       href="/css/main.css" />
     <link
       rel="stylesheet"
       href="/css/style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      defer></script>
   </head>
   <body>
     <nav>
       <ul>
         <li><a href="/index.html">Home</a></li>
+        <li><a href="/projects.html">Projects</a></li>
         <li><a href="/photos.html">Photos</a></li>
         <li class="active"><a href="/blog.html">Blog</a></li>
       </ul>
     </nav>
 
-    <main>
-      <!-- Blog Post List -->
+    <main class="blog-page">
+      <header class="page-header">
+        <h1>Writing</h1>
+      </header>
+
       <section class="blog-post-list">
-        <!-- Blog Posts Container - Will be populated via JavaScript -->
         <div id="blog-posts-container">
-          <!-- Blog posts will be dynamically loaded here -->
+          <div class="loading">Loading posts...</div>
         </div>
       </section>
     </main>

@@ -1,29 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+      content="width=device-width, initial-scale=1.0" />
     <title>Projects - Benjamin Hallock</title>
     <link
       rel="icon"
       href="/favicon.ico"
-      type="image/x-icon"
-    />
+      type="image/x-icon" />
     <link
       rel="stylesheet"
-      href="/css/normalize.css"
-    />
+      href="/css/normalize.css" />
     <link
       rel="stylesheet"
-      href="/css/main.css"
-    />
+      href="/css/main.css" />
     <link
       rel="stylesheet"
-      href="/css/style.css"
-    />
+      href="/css/style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      defer></script>
   </head>
   <body>
     <nav>
@@ -35,6 +33,184 @@
       </ul>
     </nav>
 
-    <main></main>
+    <main class="projects-page">
+      <header class="page-header">
+        <h1>Projects</h1>
+        <p>A deep dive into my latest work.</p>
+      </header>
+
+      <article
+        class="card blog-post-full"
+        style="margin-bottom: 3rem">
+        <div class="blog-content">
+          <h2>Pixel Party</h2>
+          <p>
+            4-man project to showcase our ability to use React, CSS, Node.js, Express, and MongoDB
+            Atlas
+          </p>
+
+          <img
+            src="/img/p2_1.png"
+            alt="Project 2 image 1"
+            style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
+          <h3>Weeks 1-2</h3>
+          <p>
+            Sprint 1 was spent working out the details of the game and getting a working full-stack
+            with authentication login.
+          </p>
+
+          <img
+            src="/img/p2_2.png"
+            alt="Project 2 image 2"
+            style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
+          <h3>Weeks 3-4</h3>
+          <p>
+            We started building the core game which required setting up a lobby with a list of
+            players. Any player can join by copying the link to the lobby into the URL bar or Create
+            Lobby page.
+          </p>
+
+          <img
+            src="/img/p2_3.png"
+            alt="Project 2 image 3"
+            style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
+          <h3>Weeks 5-6</h3>
+          <p>
+            Up until this point, were were sending REST API requets for all the data from front to
+            back. For the game we needed to utilize websocket packages for Node/React. This requires
+            creating a singleton on both the front and the back end, which actively monitors for any
+            communication from a client/server, then callbacks to the appropriate functions. All
+            aspects of the game including chat, drawing,
+          </p>
+
+          <img
+            src="/img/p2_4.png"
+            alt="Project 2 image 4"
+            style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
+          <h3>Week 5-6</h3>
+          <p>
+            The entire game runs on timers associated with the server. The server sends out new
+            events to update the client. Once the "drawer" picks a word, they have a limited time to
+            draw and let others guess the word in the chat box. Any correct guesses are show but not
+            reveal. Once time runs out or everyone guessed, the round ends.
+          </p>
+
+          <img
+            src="/img/p2_5.png"
+            alt="Project 2 image 5"
+            style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
+          <h3>Weeks 7-8</h3>
+          <p>
+            The round restarts with a new drawer. The letters above the drawing can slowly be
+            revealed at the game-leader's chosen speed. Once everyone has drawn once, we calculate
+            the score based on who guess right the fastest, and who drew correctly enough to guess.
+            A winner is decided, or the second round starts.
+          </p>
+
+          <img
+            src="/img/p2_6.png"
+            alt="Project 2 image 6"
+            style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
+          <img
+            src="/img/p2_7.png"
+            alt="Project 2 image 7"
+            style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
+
+          <img
+            src="/img/p2_8.png"
+            alt="Project 2 image 8"
+            style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
+          <h3>Conclusion</h3>
+          <p>
+            A functional game with user control and sound effects was created using a full-stack
+            MERN application. We have working login with validation using REST API. We have some
+            variables to control how the game operates. We handled multiple users logging in at
+            different times to accomidate the gameplay. Live drawing can be done by all lobby users
+            before the game starts. The game runs on a timer thanks to the WebSocket singleton on
+            the Node server ochestrating when the clients change views.
+          </p>
+        </div>
+      </article>
+
+      <article class="card blog-post-full">
+        <div class="blog-content">
+          <h2>Raspberry Pi Camera Die Counter</h2>
+          <p>
+            This is a 3-man project where we were instructed to make a raspberry pi hardware setup which could use a python script to execute any hardware such as a breadboard with buttons. We chose to use a camera as an input device. I wanted to read and image and output data on screen, so we chose dice as the calculation.
+          </p>
+          <img
+            src="/img/p1_1.jpeg"
+            alt="Project image 1"
+            style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
+
+          <h3>Design and Planning</h3>
+          <p>
+            In order to make a complicated python script, we used a AI-assistant to build a script that could not only take an image, but isolate the black dies on the image and return the correct sum. We needed a platform to build this on so I drafted a 3-d box-like structure using a web-app, then printed it in the schools 3d lab. 
+          </p>
+
+          <img
+            src="/img/p1_2.jpeg"
+            alt="Project image 2"
+            style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
+
+          <h3>Initial Build</h3>
+          <p>
+            Initially the code would not recognize all the dice correctly. Using some prompt-driven development, I guided it to correct the errors in the image and successfully isolated the individual dies on screen.
+          </p>
+
+          <img
+            src="/img/p1_3.jpeg"
+            alt="Project image 3"
+            style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
+
+          <h3>Refining the Interface</h3>
+          <p>
+            Phasellus volutpat, metus eget egestas mollis, lacus lacus blandit dui, id egestas quam
+            mauris ut lacus. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+          </p>
+
+          <img
+            src="/img/p1_4.jpeg"
+            alt="Project image 4"
+            style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
+
+          <h3>Testing and QA</h3>
+          <p>
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+            egestas. Proin magna. Nunc interdum lacus sit amet orci. Mauris turpis nunc, blandit et,
+            volutpat molestie, porta ut, ligula.
+          </p>
+
+          <img
+            src="/img/p1_5.jpeg"
+            alt="Project image 5"
+            style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
+
+          <h3>Final Release</h3>
+          <p>
+            Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
+            dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius
+            laoreet.
+          </p>
+
+          <img
+            src="/img/p1_6.jpeg"
+            alt="Project image 6"
+            style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="currentYear"></span> Benjamin Hallock. All rights reserved.</p>
+    </footer>
+
+    <a
+      href="#"
+      class="back-to-top"
+      id="backToTop"
+      >↑</a
+    >
+    <script src="/js/main.js"></script>
   </body>
 </html>
