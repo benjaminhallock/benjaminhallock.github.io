@@ -30,39 +30,34 @@
       defer></script>
   </head>
   <body>
-    <nav>
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <h2>Bengi</h2>
+      </div>
       <ul>
         <li><a href="/index.html">Home</a></li>
-        <li><a href="/projects.html">Projects</a></li>
-        <li><a href="/photos.html">Photos</a></li>
-        <li class="active"><a href="/blog.html">Blog</a></li>
+        <li><a href="/index.html#blog">Back to Blog</a></li>
       </ul>
     </nav>
 
-    <main class="blog-page">
-      <div class="parallax-wrapper">
-        <div
-          class="parallax-bg"
-          style="background-image: url('/img/8.jpeg')"></div>
-        <div class="earthy-overlay"></div>
-        <header class="hero-content">
-          <h1 class="hero-title">Writing</h1>
-          <p class="hero-desc">Thoughts, stories, and reflections.</p>
-        </header>
-      </div>
+    <div id="bg-slideshow">
+      <div class="earthy-overlay"></div>
+      <div
+        class="slide active"
+        style="background-image: url('/img/8.jpeg')"></div>
+    </div>
 
-      <section class="blog-section blog-post-list">
-        <div id="blog-posts-container">
-          <div class="loading">Loading posts...</div>
+    <main class="main-content single-page-layout blog-page">
+      <section class="content-section">
+        <h2 class="section-title glass-title">All Writing</h2>
+        <div class="glass-panel">
+          <p style="text-align: center; margin-bottom: 2rem">Thoughts, stories, and reflections.</p>
+          <div id="blog-posts-container">
+            <div class="loading">Loading posts...</div>
+          </div>
         </div>
       </section>
     </main>
-
-    <footer>
-      <div class="footer-content">
-        <p>&copy; <span id="currentYear"></span> Benjamin Hallock. All rights reserved.</p>
-      </div>
-    </footer>
 
     <a
       href="#"

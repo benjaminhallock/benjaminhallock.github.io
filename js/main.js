@@ -190,28 +190,41 @@ if (typeof gsap !== 'undefined') {
   }
 }
 
-// Background Slideshow Logic
-const slideshowContainer = document.getElementById('bg-slideshow')
-if (slideshowContainer) {
+// --- Slideshow Logic ---
+function initSlideshow() {
+  const slideshowContainer = document.getElementById('bg-slideshow')
+  if (!slideshowContainer) return
+
   const totalImages = 15
   let currentIdx = 1
-  const slide1 = document.getElementById('slide-1')
-  const slide2 = document.getElementById('slide-2')
+  const slide1 = slideshowContainer.querySelector('#slide-1')
+  const slide2 = slideshowContainer.querySelector('#slide-2')
+
+  // Ensure both slides exist before starting
+  if (!slide1 || !slide2) {
+    console.error('Slideshow container is missing #slide-1 or #slide-2 elements.')
+    return
+  }
 
   setInterval(() => {
     currentIdx = (currentIdx % totalImages) + 1
     const newImgUrl = `url('img/${currentIdx}.jpeg')`
 
-    if (slide1.classList.contains('active')) {
+    if (slide1 && slide2 && slide1.classList.contains('active')) {
       slide2.style.backgroundImage = newImgUrl
       slide2.classList.add('active')
       slide1.classList.remove('active')
-    } else {
+    } else if (slide1 && slide2) {
       slide1.style.backgroundImage = newImgUrl
       slide1.classList.add('active')
       slide2.classList.remove('active')
     }
   }, 6000) // Crossfade every 6 seconds
+}
+
+// Initialize slideshow on pages that have it from the start (like index.html)
+if (document.getElementById('bg-slideshow')) {
+  initSlideshow()
 }
 
 // Sidebar Active Link Highlighting on Scroll
@@ -235,4 +248,54 @@ if (sections.length > 0 && navLinks.length > 0) {
       }
     })
   })
+}
+
+// --- Dynamic styling for individual blog posts in /blog/ ---
+const currentPath = window.location.pathname
+if (currentPath.includes('/blog/') && !currentPath.endsWith('blog.html')) {
+  document.body.classList.add('blog-post-view')
+
+  // 1. Rewrite Navbar to Sidebar with just Home & Back to Blog
+  const nav = document.querySelector('nav')
+  if (nav) {
+    nav.className = 'sidebar'
+    nav.innerHTML = `
+      <div class="sidebar-header">
+        <h2>Bengi</h2>
+      </div>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/index.html#blog">Back to Blog</a></li>
+      </ul>
+    `
+  }
+
+  // 2. Setup Background Slideshow
+  if (!document.getElementById('bg-slideshow')) {
+    const bg = document.createElement('div')
+    bg.id = 'bg-slideshow'
+    bg.innerHTML = `
+      <div class="earthy-overlay"></div>
+      <div id="slide-1" class="slide active" style="background-image: url('/img/15.jpeg')"></div>
+      <div id="slide-2" class="slide"></div>
+    `
+    document.body.prepend(bg)
+    // Now that the element is in the DOM, initialize the slideshow for it
+    initSlideshow()
+  }
+
+  // 3. Wrap main content into a glass panel
+  const main = document.querySelector('main')
+  if (main) {
+    main.className = 'main-content single-page-layout'
+    const wrapper = document.createElement('section')
+    wrapper.className = 'content-section'
+    const glassPanel = document.createElement('article')
+    glassPanel.className = 'glass-panel post-glass-panel'
+    while (main.firstChild) {
+      glassPanel.appendChild(main.firstChild)
+    }
+    wrapper.appendChild(glassPanel)
+    main.appendChild(wrapper)
+  }
 }

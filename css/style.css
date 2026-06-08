@@ -656,11 +656,11 @@ blockquote {
   position: fixed;
   top: 0;
   left: 0;
-  width: 200px;
+  width: 150px;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 3rem 1.5rem;
+  padding: 3rem 1rem;
   z-index: 1000;
 }
 .sidebar-header {
@@ -672,6 +672,6 @@ blockquote {
   gap: 1.5rem;
 }
 .main-content {
-  margin-left: 200px;
-  width: calc(100% - 200px);
+  margin-left: 150px;
+  width: calc(100% - 150px);
 }

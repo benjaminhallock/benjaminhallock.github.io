@@ -131,7 +131,6 @@ main {
   position: relative;
   z-index: 1;
   padding: 2rem;
-  max-width: 420px; /* Tiny card width */
   max-width: 360px; /* Tiny card width */
   margin: 0 auto;
 }
@@ -206,17 +205,15 @@ main {
   text-align: center;
 }
 .glass-panel {
-  background: rgba(0, 0, 0, 0.45) !important;
   background: rgba(0, 0, 0, 0.05) !important;
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   border: 1px solid rgba(255, 255, 255, 0.06) !important;
   border-radius: 12px;
   padding: 2.5rem;
-  max-width: 420px; /* Tiny card width */
   max-width: 360px; /* Tiny card width */
   width: 100%;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6) !important;
+  box-shadow: none !important;
   color: #ddd !important;
 }
 .glass-panel h1,
@@ -247,13 +244,25 @@ main {
   margin-top: 0;
 }
 
+/* Blog Post Reading View Overrides */
+.blog-post-view .post-glass-panel,
+.blog-page .glass-panel {
+  max-width: 650px !important; /* Wider for comfortable reading */
+  padding: 4rem 3rem !important;
+}
+.blog-post-view .post-glass-panel p,
+.blog-page .glass-panel p {
+  font-size: 1rem !important;
+  color: #cccccc !important;
+}
+
 /* Smooth integration with sections below the hero */
 .blog-section {
   background-color: var(--earth-sand);
   padding: 6rem 2rem;
   position: relative;
   z-index: 2;
-  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: none;
   border-radius: 40px 40px 0 0;
   margin-top: -40px;
   max-width: 1024px;
@@ -266,15 +275,13 @@ section:not(.blog-section),
 article,
 .card,
 .blog-post-card {
-  background-color: rgba(25, 25, 25, 0.8) !important;
   background-color: rgba(0, 0, 0, 0.05) !important;
   border: 1px solid rgba(255, 255, 255, 0.05) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: none !important;
 }
 .blog-post-card:hover,
 article:hover,
 .card:hover {
-  background-color: #222 !important;
   background-color: rgba(0, 0, 0, 0.1) !important;
   transform: translateY(-4px) scale(1.01) !important;
 }
