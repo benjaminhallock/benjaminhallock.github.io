@@ -147,21 +147,92 @@ if (modalTriggers.length > 0) {
 
 // GSAP Animations
 if (typeof gsap !== 'undefined') {
-  gsap.from('.header > *', {
-    y: 30,
-    opacity: 0,
-    duration: 1,
-    stagger: 0.2,
-    ease: 'power2.out',
-    delay: 0.1,
-  })
+  // Register ScrollTrigger if available
+  if (typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger)
 
-  gsap.from('section, article, .card, .photo-item', {
-    y: 40,
-    opacity: 0,
-    duration: 1,
-    stagger: 0.15,
-    ease: 'power2.out',
-    delay: 0.3,
+    // Deep parallax effect for the homepage background
+    const parallaxBg = document.querySelector('.parallax-bg')
+    if (parallaxBg) {
+      gsap.to(parallaxBg, {
+        yPercent: 20,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.parallax-wrapper',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true,
+        },
+      })
+    }
+
+    // Smooth fade-in cards strictly as they scroll into view
+    const cards = document.querySelectorAll('.glass-panel')
+    if (cards.length > 0) {
+      cards.forEach(card => {
+        gsap.from(card, {
+          y: 60,
+          opacity: 0,
+          duration: 1,
+          ease: 'sine.out',
+          scrollTrigger:
+            typeof ScrollTrigger !== 'undefined'
+              ? {
+                  trigger: card,
+                  start: 'top 85%',
+                  toggleActions: 'play none none reverse',
+                }
+              : null,
+          delay: typeof ScrollTrigger !== 'undefined' ? 0 : 0.3,
+        })
+      })
+    }
+  }
+}
+
+// Background Slideshow Logic
+const slideshowContainer = document.getElementById('bg-slideshow')
+if (slideshowContainer) {
+  const totalImages = 15
+  let currentIdx = 1
+  const slide1 = document.getElementById('slide-1')
+  const slide2 = document.getElementById('slide-2')
+
+  setInterval(() => {
+    currentIdx = (currentIdx % totalImages) + 1
+    const newImgUrl = `url('img/${currentIdx}.jpeg')`
+
+    if (slide1.classList.contains('active')) {
+      slide2.style.backgroundImage = newImgUrl
+      slide2.classList.add('active')
+      slide1.classList.remove('active')
+    } else {
+      slide1.style.backgroundImage = newImgUrl
+      slide1.classList.add('active')
+      slide2.classList.remove('active')
+    }
+  }, 6000) // Crossfade every 6 seconds
+}
+
+// Sidebar Active Link Highlighting on Scroll
+const sections = document.querySelectorAll('section.content-section')
+const navLinks = document.querySelectorAll('.sidebar ul li a')
+if (sections.length > 0 && navLinks.length > 0) {
+  window.addEventListener('scroll', () => {
+    let current = ''
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop
+      const sectionHeight = section.clientHeight
+      if (scrollY >= sectionTop - sectionHeight / 3) {
+        current = section.getAttribute('id')
+      }
+    })
+
+    navLinks.forEach(link => {
+      link.parentElement.classList.remove('active')
+      if (link.getAttribute('href').includes(current)) {
+        link.parentElement.classList.add('active')
+      }
+    })
   })
 }

@@ -22,52 +22,173 @@
     <link
       rel="stylesheet"
       href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="css/earthy.css" />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
       defer></script>
     <script
       src="js/blog.js"
       defer></script>
   </head>
   <body>
-    <nav>
+    <!-- New Sidebar Navigation -->
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <h2>Bengi</h2>
+      </div>
       <ul>
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="/projects.html">Projects</a></li>
-        <li><a href="photos.html">Photos</a></li>
-        <li><a href="/blog.html">Blog</a></li>
+        <li class="active"><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#blog">Blog</a></li>
       </ul>
     </nav>
-    <main class="home-page">
-      <header class="header">
-        <h1>Hi! I'm Bengi</h1>
-        <p class="subtitle">Software Engineer & Photographer</p>
-        <p>I write about building for the web and share photography from time to time.</p>
-        <a
-          href="/projects.html"
-          class="btn"
-          >Projects</a
-        >
-      </header>
 
+    <!-- Full Screen Background Slideshow -->
+    <div id="bg-slideshow">
+      <div class="earthy-overlay"></div>
+      <div
+        id="slide-1"
+        class="slide active"
+        style="background-image: url('img/1.jpeg')"></div>
+      <div
+        id="slide-2"
+        class="slide"></div>
+    </div>
+
+    <!-- Main Scrollable Content -->
+    <main class="main-content single-page-layout">
+      <!-- Hero Section -->
       <section
-        id="blog-section"
-        class="blog-section">
-        <h2>Writing</h2>
-
-        <div id="blog-posts-container">
-          <div class="loading">Loading posts...</div>
-        </div>
-
-        <p class="blog-all-link">
-          <a href="/blog.html">View All Posts</a>
-        </p>
+        id="home"
+        class="content-section">
+        <header class="hero-content glass-panel">
+          <h1 class="hero-title">Hi! I'm Bengi</h1>
+          <p class="subtitle hero-subtitle">Software Engineer & Photographer</p>
+          <p class="hero-desc">
+            I write about building for the web and share photography from time to time.
+          </p>
+          <a
+            href="#projects"
+            class="btn hero-btn"
+            >Explore Projects</a
+          >
+        </header>
       </section>
-    </main>
 
-    <footer>
-      <p>&copy; <span id="currentYear"></span> Benjamin Hallock. All rights reserved.</p>
-    </footer>
+      <!-- Projects Section -->
+      <section
+        id="projects"
+        class="content-section">
+        <h2 class="section-title glass-title">Projects</h2>
+
+        <!-- Project 1 -->
+        <article
+          class="glass-panel"
+          style="margin-bottom: 3rem">
+          <div class="blog-content">
+            <h2>Pixel Party</h2>
+            <p>
+              4-man project to showcase our ability to use React, CSS, Node.js, Express, and MongoDB
+              Atlas.
+            </p>
+            <img
+              src="/img/p2_1.png"
+              alt="Project 2 image 1"
+              style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
+            <h3>Weeks 1-2</h3>
+            <p>
+              The goal was to making a functional multiplayer game where a player can draw an image
+              on the screen, and the other members of the lobby guess the word in the chatbox. We
+              spent sprint 1 setting up the login/register rest api calls.
+            </p>
+            <img
+              src="/img/p2_3.png"
+              alt="Project 2 image 3"
+              style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
+            <h3>Weeks 3-6</h3>
+            <p>
+              All aspects of the game including chat, drawing, and word-selection use the WebSocket
+              package on the frontend and backend. This is essentially two singletons playing ping
+              pong, both waiting for keywords to callback functions for the server/client to
+              process.
+            </p>
+            <img
+              src="/img/p2_5.png"
+              alt="Project 2 image 5"
+              style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
+            <h3>Conclusion</h3>
+            <p>
+              Our biggest hurdles were getting the websockets to sync across devices. This included
+              getting the drawing aspect to work, as well as running the whole show on a timer that
+              could allow users to join the game at any time.
+            </p>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="glass-panel">
+          <div class="blog-content">
+            <h2>Raspberry Pi Camera Die Counter</h2>
+            <p>
+              This is a 3-man project where we were instructed to make a raspberry pi hardware setup
+              which could use a python script to execute any hardware such as a breadboard with
+              buttons. We chose to use a camera as an input device.
+            </p>
+            <img
+              src="/img/p1_1.jpeg"
+              alt="Project image 1"
+              style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
+            <h3>Design and Planning</h3>
+            <p>
+              In order to make a complicated python script, we used a AI-assistant to build a script
+              that could not only take an image, but isolate the black dies on the image and return
+              the correct sum. We needed a platform to build this on so I drafted a 3-d box-like
+              structure.
+            </p>
+            <img
+              src="/img/p1_3.jpeg"
+              alt="Project image 3"
+              style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
+            <h3>Final Release</h3>
+            <p>
+              Initially the code would not recognize all the dice correctly. Using some
+              prompt-driven development, I guided it to correct the errors in the image and
+              successfully isolated the individual dies on screen.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <!-- Blog Section -->
+      <section
+        id="blog"
+        class="content-section">
+        <h2 class="section-title glass-title">Writing</h2>
+        <div class="glass-panel">
+          <div id="blog-posts-container">
+            <div class="loading">Loading posts...</div>
+          </div>
+          <p
+            class="blog-all-link"
+            style="margin-top: 2rem; text-align: center">
+            <a
+              href="/blog.html"
+              class="btn hero-btn"
+              >View All Posts Archive</a
+            >
+          </p>
+        </div>
+      </section>
+
+      <footer class="glass-footer">
+        <p>&copy; <span id="currentYear"></span> Benjamin Hallock. All rights reserved.</p>
+      </footer>
+    </main>
 
     <a
       href="#"

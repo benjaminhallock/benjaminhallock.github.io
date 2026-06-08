@@ -19,8 +19,14 @@
     <link
       rel="stylesheet"
       href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="css/earthy.css" />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
       defer></script>
   </head>
   <body>
@@ -34,12 +40,20 @@
       </ul>
     </nav>
     <main>
-      <section>
-        <h2>Gallery</h2>
-        <p>
-          A collection of my recent photography work. Click on any image to view it full screen.
-        </p>
+      <div class="parallax-wrapper">
+        <div
+          class="parallax-bg"
+          style="background-image: url('img/12.jpeg')"></div>
+        <div class="earthy-overlay"></div>
+        <header class="hero-content">
+          <h1 class="hero-title">Gallery</h1>
+          <p class="hero-desc">
+            A collection of my recent photography work. Click on any image to view it full screen.
+          </p>
+        </header>
+      </div>
 
+      <section class="blog-section">
         <div class="photo-grid">
           <div
             class="photo-item"

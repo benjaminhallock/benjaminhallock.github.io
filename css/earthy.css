@@ -1,0 +1,290 @@
+:root {
+  /* Luxury Dark Palette Override */
+  --earth-green: #2a2a2a;
+  --earth-green-dark: #111111;
+  --earth-terracotta: #ffffff;
+  --earth-sand: #e5e5e5;
+  --earth-clay: #888888;
+  --earth-dark: #000000;
+}
+
+html {
+  background-color: var(--earth-dark);
+}
+body {
+  background-color: transparent !important;
+  color: var(--earth-sand);
+}
+
+/* Earthy Typography Overrides */
+h1:not(.hero-title),
+h2,
+h3,
+h4,
+h5,
+h6,
+.blog-post-card h3 a {
+  color: #ffffff !important;
+}
+p:not(.hero-desc):not(.hero-subtitle),
+li,
+span:not(.hero-subtitle) {
+  color: #cccccc !important;
+}
+.blog-post-date,
+.blog-meta {
+  color: var(--earth-clay) !important;
+}
+
+/* Earthy Navigation Overrides */
+nav,
+.sidebar {
+  background: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+nav ul li a,
+.sidebar ul li a {
+  color: rgba(255, 255, 255, 0.6) !important;
+  transition:
+    color 0.3s ease,
+    border-bottom 0.3s ease;
+  font-size: 0.75rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+}
+nav ul li.active a,
+.sidebar ul li.active a,
+nav ul li a:hover,
+.sidebar ul li a:hover {
+  color: #ffffff !important;
+  border-bottom: 1px solid #ffffff !important;
+}
+
+/* Ensure full-bleed background for main containers */
+main.home-page,
+main.blog-page,
+main.projects-page,
+main {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+/* Parallax Hero Section */
+.parallax-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+/* Global Slideshow Background */
+#bg-slideshow {
+  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  background-color: var(--earth-dark);
+  overflow: hidden;
+}
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition:
+    opacity 2.5s ease-in-out,
+    transform 10s ease-out;
+  will-change: opacity, transform;
+  transform: scale(1.05);
+}
+.slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.earthy-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Brighter overlay so photos pop */
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  mix-blend-mode: normal;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  max-width: 420px; /* Tiny card width */
+  max-width: 360px; /* Tiny card width */
+  margin: 0 auto;
+}
+.hero-title {
+  font-family: var(--font-headers);
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+}
+.hero-desc {
+  font-size: 0.85rem;
+  margin-bottom: 2.5rem;
+  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+/* Earthy Button */
+.hero-btn {
+  display: inline-block;
+  background-color: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  color: #fff !important;
+  padding: 0.8rem 2rem;
+  font-size: 0.75rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border-radius: 0;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  box-shadow: none !important;
+}
+.hero-btn:hover {
+  background-color: #fff !important;
+  color: #000 !important;
+  transform: translateY(-2px);
+}
+
+/* Single Page Content Layout */
+.main-content {
+  position: relative;
+  z-index: 2;
+}
+.content-section {
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Centers the tiny cards horizontally */
+}
+.glass-title {
+  font-family: var(--font-headers);
+  font-style: italic;
+  font-size: 1.8rem;
+  color: #fff !important;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.glass-panel {
+  background: rgba(0, 0, 0, 0.45) !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 12px;
+  padding: 2.5rem;
+  max-width: 420px; /* Tiny card width */
+  max-width: 360px; /* Tiny card width */
+  width: 100%;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6) !important;
+  color: #ddd !important;
+}
+.glass-panel h1,
+.glass-panel h2,
+.glass-panel h3,
+.glass-panel p,
+.glass-panel a {
+  color: #fff !important;
+  text-shadow: none;
+}
+/* Force tiny text inside the glass panels */
+.glass-panel p,
+.glass-panel li,
+.glass-panel a {
+  font-size: 0.85rem !important;
+  line-height: 1.6;
+}
+.glass-panel h2 {
+  font-size: 1.4rem !important;
+}
+.glass-panel h3 {
+  font-size: 1.1rem !important;
+  margin-top: 1.5rem;
+}
+.glass-footer {
+  background: transparent !important;
+  border: none !important;
+  margin-top: 0;
+}
+
+/* Smooth integration with sections below the hero */
+.blog-section {
+  background-color: var(--earth-sand);
+  padding: 6rem 2rem;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.4);
+  border-radius: 40px 40px 0 0;
+  margin-top: -40px;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Earthy Cards & Content blocks */
+section:not(.blog-section),
+article,
+.card,
+.blog-post-card {
+  background-color: rgba(25, 25, 25, 0.8) !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.blog-post-card:hover,
+article:hover,
+.card:hover {
+  background-color: #222 !important;
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  transform: translateY(-4px) scale(1.01) !important;
+}
+
+/* Footer */
+footer {
+  background-color: transparent !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+footer p,
+footer span {
+  color: var(--earth-sand) !important;
+}
