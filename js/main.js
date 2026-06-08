@@ -231,12 +231,14 @@ if (document.getElementById('bg-slideshow')) {
 const sections = document.querySelectorAll('section.content-section')
 const navLinks = document.querySelectorAll('.sidebar ul li a')
 if (sections.length > 0 && navLinks.length > 0) {
-  window.addEventListener('scroll', () => {
-    let current = ''
+  const updateActiveSidebarLink = () => {
+    // Ensure Home stays active near the top of the page.
+    let current = sections[0].getAttribute('id')
+    const scrollPosition = window.scrollY + window.innerHeight * 0.33
+
     sections.forEach(section => {
       const sectionTop = section.offsetTop
-      const sectionHeight = section.clientHeight
-      if (scrollY >= sectionTop - sectionHeight / 3) {
+      if (scrollPosition >= sectionTop) {
         current = section.getAttribute('id')
       }
     })
@@ -247,7 +249,11 @@ if (sections.length > 0 && navLinks.length > 0) {
         link.parentElement.classList.add('active')
       }
     })
-  })
+  }
+
+  window.addEventListener('scroll', updateActiveSidebarLink)
+  window.addEventListener('resize', updateActiveSidebarLink)
+  updateActiveSidebarLink()
 }
 
 // --- Dynamic styling for individual blog posts in /blog/ ---
