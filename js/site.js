@@ -117,11 +117,19 @@
     title.className = 'card-title'
     title.textContent = item.title
 
-    const summary = document.createElement('p')
-    summary.className = 'card-summary'
-    summary.textContent = item.summary || ''
+    body.append(kicker, title)
 
-    body.append(kicker, title, summary)
+    if (item.type === 'post' && item.body) {
+      const article = document.createElement('div')
+      article.className = 'card-article blog-content'
+      article.innerHTML = item.body
+      body.appendChild(article)
+    } else {
+      const summary = document.createElement('p')
+      summary.className = 'card-summary'
+      summary.textContent = item.summary || ''
+      body.appendChild(summary)
+    }
 
     if (item.tags && item.tags.length) {
       const tags = document.createElement('ul')
@@ -134,7 +142,7 @@
       body.appendChild(tags)
     }
 
-    if (item.href) {
+    if (item.href && item.type !== 'post') {
       const a = document.createElement('a')
       a.className = 'card-link'
       a.href = item.href

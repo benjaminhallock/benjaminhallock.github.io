@@ -54,6 +54,7 @@ async function syncBlogPosts() {
         title,
         date,
         excerpt,
+        body: $('.blog-content').html() || '',
         url: `/blog/${file}`,
         tags: tags.length ? tags : []
       };
