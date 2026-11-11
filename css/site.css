@@ -8,7 +8,7 @@
 :root {
   --ink: #060607;
   --ink-2: #0b0b0d;
-  --panel: rgba(20, 20, 23, 0.72);
+  --panel: #111113;
   --panel-solid: #141417;
   --line: rgba(255, 255, 255, 0.08);
   --line-strong: rgba(255, 255, 255, 0.18);
@@ -24,14 +24,14 @@
     'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --mono: 'SFMono-Regular', ui-monospace, Menlo, Consolas, monospace;
 
-  --rail-w: 340px;
+  --rail-w: 280px;
   --bar-h: 60px;
-  --radius: 18px;
-  --radius-sm: 12px;
+  --radius: 6px;
+  --radius-sm: 4px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --speed: 0.45s;
 
-  --shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+  --shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
   --focus: 0 0 0 3px rgba(94, 169, 255, 0.45);
 
   /* Compatibility aliases for older inline styles on legacy pages */
@@ -180,6 +180,11 @@ button {
   will-change: opacity, transform;
 }
 
+/* The home page stays deliberately quiet: content takes priority over imagery. */
+body:not(.is-document-page) .bg .slide {
+  display: none;
+}
+
 .bg .slide.is-active {
   opacity: 1;
   transform: scale(1);
@@ -214,9 +219,7 @@ body.rail-hidden .bg::after {
   width: var(--rail-w);
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, rgba(8, 8, 10, 0.86), rgba(8, 8, 10, 0.72));
-  backdrop-filter: blur(26px) saturate(140%);
-  -webkit-backdrop-filter: blur(26px) saturate(140%);
+  background: var(--ink-2);
   border-right: 1px solid var(--line);
   transform: translateX(0);
   transition: transform var(--speed) var(--ease);
@@ -229,7 +232,7 @@ body.rail-hidden .rail {
 
 /* Profile block */
 .profile {
-  padding: 26px 24px 18px;
+  padding: 24px 22px 18px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -240,8 +243,8 @@ body.rail-hidden .rail {
 }
 
 .avatar {
-  width: 58px;
-  height: 58px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid var(--line-strong);
@@ -310,7 +313,7 @@ body.rail-hidden .rail {
   text-transform: uppercase;
   color: var(--muted);
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 3px;
   padding: 5px 12px;
   transition: all 0.2s ease;
 }
@@ -324,15 +327,15 @@ body.rail-hidden .rail {
 /* Filter tabs */
 .tabs {
   display: flex;
-  gap: 4px;
-  padding: 14px 18px 10px;
+  gap: 0;
+  padding: 12px 18px 8px;
   border-bottom: 1px solid var(--line);
 }
 
 .tab {
   flex: 1;
   padding: 7px 6px;
-  border-radius: 999px;
+  border-radius: 0;
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -345,8 +348,8 @@ body.rail-hidden .rail {
 }
 
 .tab[aria-selected='true'] {
-  color: #06101d;
-  background: var(--text);
+  color: var(--text);
+  box-shadow: inset 0 -1px var(--text);
 }
 
 /* Numbered index */
@@ -393,7 +396,7 @@ body.rail-hidden .rail {
 .index-item[aria-current='true'] {
   color: #fff;
   border-left-color: var(--accent);
-  background: linear-gradient(90deg, var(--accent-soft), transparent 70%);
+  background: transparent;
 }
 
 .index-num {
@@ -449,7 +452,7 @@ body.rail-hidden .rail {
   justify-content: center;
   width: 36px;
   height: 36px;
-  border-radius: 50%;
+  border-radius: 4px;
   color: var(--muted);
   border: 1px solid var(--line);
   transition: all 0.2s ease;
@@ -494,9 +497,7 @@ body.rail-hidden .stage {
   gap: 16px;
   padding: 0 clamp(14px, 3vw, 34px);
   border-bottom: 1px solid var(--line);
-  background: rgba(6, 6, 7, 0.45);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: var(--ink);
 }
 
 .stage-bar .left,
@@ -564,11 +565,9 @@ body.rail-hidden .stage {
 .card {
   width: min(100%, 760px);
   background: var(--panel);
-  backdrop-filter: blur(26px) saturate(150%);
-  -webkit-backdrop-filter: blur(26px) saturate(150%);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow: none;
   overflow: hidden;
 }
 

@@ -283,8 +283,7 @@
   /* ---------- filters ---------------------------------------------------- */
   function matches(item, filter) {
     if (filter === 'all') return true
-    if (filter === 'projects') return item.type === 'project'
-    if (filter === 'writing') return item.type === 'post'
+    if (filter === 'blog') return item.type === 'project' || item.type === 'post'
     if (filter === 'photos') return item.type === 'photo'
     return true
   }
@@ -420,11 +419,9 @@
     const initial = initialId ? visible.findIndex(v => v.id === initialId) : 0
     goTo(initial >= 0 ? initial : 0, { hash: false, instant: true })
 
-    const statPosts = document.querySelector('[data-stat="posts"]')
-    const statProjects = document.querySelector('[data-stat="projects"]')
+    const statBlog = document.querySelector('[data-stat="blog"]')
     const statPhotos = document.querySelector('[data-stat="photos"]')
-    if (statPosts) statPosts.textContent = counts.posts || items.length
-    if (statProjects) statProjects.textContent = counts.projects || 0
+    if (statBlog) statBlog.textContent = (counts.projects || 0) + (counts.writing || 0)
     if (statPhotos) statPhotos.textContent = counts.photos || 0
 
     bindInput()
