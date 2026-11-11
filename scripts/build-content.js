@@ -41,6 +41,7 @@ const items = [
     kicker: 'Writing',
     date: p.date,
     summary: p.excerpt || 'A note on building for the web.',
+    body: p.body || '',
     tags: p.tags || [],
     href: p.url,
     linkLabel: 'Read the article',
