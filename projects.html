@@ -10,49 +10,32 @@
       rel="icon"
       href="/favicon.ico"
       type="image/x-icon" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="stylesheet"
-      href="/css/normalize.css" />
-    <link
-      rel="stylesheet"
-      href="/css/main.css" />
-    <link
-      rel="stylesheet"
-      href="/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="/css/earthy.css" />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-      defer></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
-      defer></script>
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="/css/site.css" />
   </head>
-  <body>
-    <nav>
+  <body class="is-document-page">
+<nav class="doc-nav" aria-label="Primary">
+      <a class="doc-brand" href="/index.html">Benjamin Hallock</a>
       <ul>
-        <li><a href="/index.html">Home</a></li>
-        <li class="active"><a href="/projects.html">Projects</a></li>
+        <li><a href="/index.html">Index</a></li>
+        <li><a href="/projects.html" aria-current="page">Projects</a></li>
         <li><a href="/photos.html">Photos</a></li>
-        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/blog.html">Writing</a></li>
       </ul>
     </nav>
+    <main class="doc-main">
+      <header class="doc-hero">
+        <h1>Projects</h1>
+        <p>A deep dive into the things I've built — what worked, what broke, and what I'd do differently.</p>
+      </header>
 
-    <main class="projects-page">
-      <div class="parallax-wrapper">
-        <div
-          class="parallax-bg"
-          style="background-image: url('/img/5.jpeg')"></div>
-        <div class="earthy-overlay"></div>
-        <header class="hero-content">
-          <h1 class="hero-title">Projects</h1>
-          <p class="hero-desc">A deep dive into my latest work.</p>
-        </header>
-      </div>
-
-      <div class="blog-section">
+      <section class="blog-section">
         <article
+          id="pixel-party"
           class="card blog-post-full"
           style="margin-bottom: 3rem">
           <div class="blog-content">
@@ -63,8 +46,8 @@
             </p>
 
             <img
-              src="/img/p2_1.png"
-              alt="Project 2 image 1"
+              src="/img/p2_1.webp"
+              alt="Pixel Party lobby with the shared drawing canvas"
               style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
             <h3>Weeks 1-2</h3>
             <p>
@@ -74,8 +57,8 @@
             </p>
 
             <img
-              src="/img/p2_2.png"
-              alt="Project 2 image 2"
+              src="/img/p2_2.webp"
+              alt="Pixel Party word-selection screen for the drawer"
               style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
             <h3>Weeks 3-4</h3>
             <p>
@@ -85,8 +68,8 @@
             </p>
 
             <img
-              src="/img/p2_3.png"
-              alt="Project 2 image 3"
+              src="/img/p2_3.webp"
+              alt="Pixel Party drawing round in progress"
               style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
             <h3>Weeks 5-6</h3>
             <p>
@@ -98,8 +81,8 @@
             </p>
 
             <img
-              src="/img/p2_4.png"
-              alt="Project 2 image 4"
+              src="/img/p2_4.webp"
+              alt="Pixel Party chat and guessing interface"
               style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
             <h3>Week 5-6</h3>
             <p>
@@ -111,8 +94,8 @@
             </p>
 
             <img
-              src="/img/p2_5.png"
-              alt="Project 2 image 5"
+              src="/img/p2_5.webp"
+              alt="Pixel Party scoreboard between rounds"
               style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
             <h3>Weeks 7-8</h3>
             <p>
@@ -123,17 +106,17 @@
             </p>
 
             <img
-              src="/img/p2_6.png"
-              alt="Project 2 image 6"
+              src="/img/p2_6.webp"
+              alt="Pixel Party game interface detail"
               style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
             <img
-              src="/img/p2_7.png"
-              alt="Project 2 image 7"
+              src="/img/p2_7.webp"
+              alt="Pixel Party alternate layout"
               style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
 
             <img
-              src="/img/p2_8.png"
-              alt="Project 2 image 8"
+              src="/img/p2_8.webp"
+              alt="Pixel Party final round"
               style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
             <h3>Conclusion</h3>
             <p>
@@ -146,7 +129,7 @@
           </div>
         </article>
 
-        <article class="card blog-post-full">
+        <article id="die-counter" class="card blog-post-full">
           <div class="blog-content">
             <h2>Raspberry Pi Camera Die Counter</h2>
             <p>
@@ -156,8 +139,8 @@
               output data on screen, so we chose dice as the calculation.
             </p>
             <img
-              src="/img/p1_1.jpeg"
-              alt="Project image 1"
+              src="/img/p1_1.webp"
+              alt="Raspberry Pi camera rig pointed at a tray of dice"
               style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
 
             <h3>Design and Planning</h3>
@@ -169,8 +152,8 @@
             </p>
 
             <img
-              src="/img/p1_2.jpeg"
-              alt="Project image 2"
+              src="/img/p1_2.webp"
+              alt="3D-printed enclosure for the die counter"
               style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
 
             <h3>Initial Build</h3>
@@ -181,8 +164,8 @@
             </p>
 
             <img
-              src="/img/p1_3.jpeg"
-              alt="Project image 3"
+              src="/img/p1_3.webp"
+              alt="Dice detected and outlined by the vision script"
               style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
 
             <h3>Refining the Interface</h3>
@@ -192,8 +175,8 @@
             </p>
 
             <img
-              src="/img/p1_4.jpeg"
-              alt="Project image 4"
+              src="/img/p1_4.webp"
+              alt="Interface showing the calculated dice sum"
               style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
 
             <h3>Testing and QA</h3>
@@ -204,8 +187,8 @@
             </p>
 
             <img
-              src="/img/p1_5.jpeg"
-              alt="Project image 5"
+              src="/img/p1_5.webp"
+              alt="Testing the die counter under different lighting"
               style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
 
             <h3>Final Release</h3>
@@ -216,15 +199,15 @@
             </p>
 
             <img
-              src="/img/p1_6.jpeg"
-              alt="Project image 6"
+              src="/img/p1_6.webp"
+              alt="Finished Raspberry Pi die counter"
               style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
           </div>
         </article>
       </div>
     </main>
 
-    <footer>
+    <footer class="doc-footer">
       <p>&copy; <span id="currentYear"></span> Benjamin Hallock. All rights reserved.</p>
     </footer>
 
@@ -234,6 +217,6 @@
       id="backToTop"
       >↑</a
     >
-    <script src="/js/main.js"></script>
+    <script src="/js/doc.js"></script>
   </body>
 </html>

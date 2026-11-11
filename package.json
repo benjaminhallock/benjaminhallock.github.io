@@ -1,10 +1,8 @@
 {
-  "name": " ",
-  "version": "0.0.1",
-  "description": "",
-  "keywords": "",
-  "license": "",
-  "author": "",
+  "name": "benjaminhallock.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal site — a numbered index of projects, writing and photography",
   "scripts": {
     "sync": "node scripts/sync-blog-posts.js",
     "content": "node scripts/build-content.js",
@@ -14,7 +12,6 @@
     "serve": "python3 -m http.server 4000"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.4",
     "cheerio": "^1.0.0-rc.12"
   }
 }

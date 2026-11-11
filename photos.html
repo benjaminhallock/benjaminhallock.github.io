@@ -10,48 +10,28 @@
       rel="icon"
       href="/favicon.ico"
       type="image/x-icon" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="stylesheet"
-      href="css/normalize.css" />
-    <link
-      rel="stylesheet"
-      href="css/main.css" />
-    <link
-      rel="stylesheet"
-      href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="css/earthy.css" />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-      defer></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
-      defer></script>
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="/css/site.css" />
   </head>
-  <body>
-    <nav>
+  <body class="is-document-page">
+<nav class="doc-nav" aria-label="Primary">
+      <a class="doc-brand" href="/index.html">Benjamin Hallock</a>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="/index.html">Index</a></li>
         <li><a href="/projects.html">Projects</a></li>
-        <li class="active"><a href="photos.html">Photos</a></li>
-        <!-- <li><a href="about.html">About</a></li> -->
-        <li><a href="blog.html">Blog</a></li>
+        <li><a href="/photos.html" aria-current="page">Photos</a></li>
+        <li><a href="/blog.html">Writing</a></li>
       </ul>
     </nav>
-    <main>
-      <div class="parallax-wrapper">
-        <div
-          class="parallax-bg"
-          style="background-image: url('img/12.jpeg')"></div>
-        <div class="earthy-overlay"></div>
-        <header class="hero-content">
-          <h1 class="hero-title">Gallery</h1>
-          <p class="hero-desc">
-            A collection of my recent photography work. Click on any image to view it full screen.
-          </p>
-        </header>
-      </div>
+    <main class="doc-main doc-main--wide">
+      <header class="doc-hero">
+        <h1>Gallery</h1>
+        <p>A collection of my photography. Select any frame to view it full screen.</p>
+      </header>
 
       <section class="blog-section">
         <div class="photo-grid">
@@ -59,128 +39,128 @@
             class="photo-item"
             onclick="showFullScreenImage(this)">
             <img
-              src="img/1.jpeg"
-              alt="Photo 1"
+              src="img/1.webp"
+              alt="Photograph by Benjamin Hallock, frame 01"
               loading="lazy" />
           </div>
           <div
             class="photo-item"
             onclick="showFullScreenImage(this)">
             <img
-              src="img/2.jpeg"
-              alt="Photo 2"
+              src="img/2.webp"
+              alt="Photograph by Benjamin Hallock, frame 02"
               loading="lazy" />
           </div>
           <div
             class="photo-item"
             onclick="showFullScreenImage(this)">
             <img
-              src="img/3.jpeg"
-              alt="Photo 3"
+              src="img/3.webp"
+              alt="Photograph by Benjamin Hallock, frame 03"
               loading="lazy" />
           </div>
           <div
             class="photo-item"
             onclick="showFullScreenImage(this)">
             <img
-              src="img/4.jpeg"
-              alt="Photo 4"
+              src="img/4.webp"
+              alt="Photograph by Benjamin Hallock, frame 04"
               loading="lazy" />
           </div>
           <div
             class="photo-item"
             onclick="showFullScreenImage(this)">
             <img
-              src="img/5.jpeg"
-              alt="Photo 5"
+              src="img/5.webp"
+              alt="Photograph by Benjamin Hallock, frame 05"
               loading="lazy" />
           </div>
           <div
             class="photo-item"
             onclick="showFullScreenImage(this)">
             <img
-              src="img/6.jpeg"
-              alt="Photo 6"
+              src="img/6.webp"
+              alt="Photograph by Benjamin Hallock, frame 06"
               loading="lazy" />
           </div>
           <div
             class="photo-item"
             onclick="showFullScreenImage(this)">
             <img
-              src="img/7.jpeg"
-              alt="Photo 7"
+              src="img/7.webp"
+              alt="Photograph by Benjamin Hallock, frame 07"
               loading="lazy" />
           </div>
           <div
             class="photo-item"
             onclick="showFullScreenImage(this)">
             <img
-              src="img/8.jpeg"
-              alt="Photo 8"
+              src="img/8.webp"
+              alt="Photograph by Benjamin Hallock, frame 08"
               loading="lazy" />
           </div>
           <div
             class="photo-item"
             onclick="showFullScreenImage(this)">
             <img
-              src="img/9.jpeg"
-              alt="Photo 9"
+              src="img/9.webp"
+              alt="Photograph by Benjamin Hallock, frame 09"
               loading="lazy" />
           </div>
           <div
             class="photo-item"
             onclick="showFullScreenImage(this)">
             <img
-              src="img/10.jpeg"
-              alt="Photo 10"
+              src="img/10.webp"
+              alt="Photograph by Benjamin Hallock, frame 10"
               loading="lazy" />
           </div>
           <div
             class="photo-item"
             onclick="showFullScreenImage(this)">
             <img
-              src="img/11.jpeg"
-              alt="Photo 11"
+              src="img/11.webp"
+              alt="Photograph by Benjamin Hallock, frame 11"
               loading="lazy" />
           </div>
           <div
             class="photo-item"
             onclick="showFullScreenImage(this)">
             <img
-              src="img/12.jpeg"
-              alt="Photo 12"
+              src="img/12.webp"
+              alt="Photograph by Benjamin Hallock, frame 12"
               loading="lazy" />
           </div>
           <div
             class="photo-item"
             onclick="showFullScreenImage(this)">
             <img
-              src="img/13.jpeg"
-              alt="Photo 13"
+              src="img/13.webp"
+              alt="Photograph by Benjamin Hallock, frame 13"
               loading="lazy" />
           </div>
           <div
             class="photo-item"
             onclick="showFullScreenImage(this)">
             <img
-              src="img/14.jpeg"
-              alt="Photo 14"
+              src="img/14.webp"
+              alt="Photograph by Benjamin Hallock, frame 14"
               loading="lazy" />
           </div>
           <div
             class="photo-item"
             onclick="showFullScreenImage(this)">
             <img
-              src="img/15.jpeg"
-              alt="Photo 15"
+              src="img/15.webp"
+              alt="Photograph by Benjamin Hallock, frame 15"
               loading="lazy" />
           </div>
           <div
             class="photo-item"
             onclick="showFullScreenImage(this)">
             <img
-              src="img/16.jpeg"
-              alt="Photo 16"
+              src="img/16.webp"
+              alt="Photograph by Benjamin Hallock, frame 16"
               loading="lazy" />
           </div>
         </div>
@@ -193,7 +173,7 @@
         alt="Full Screen Image" />
     </div>
 
-    <footer>
+    <footer class="doc-footer">
       <p>&copy; <span id="currentYear"></span> Benjamin Hallock. All rights reserved.</p>
     </footer>
 
@@ -203,6 +183,6 @@
       id="backToTop"
       >↑</a
     >
-    <script src="js/main.js"></script>
+    <script src="/js/doc.js"></script>
   </body>
 </html>

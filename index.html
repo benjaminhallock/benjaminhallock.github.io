@@ -2,200 +2,163 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-    <title>Benjamin Hallock</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Benjamin Hallock — Software Engineer & Photographer</title>
     <meta
       name="description"
-      content="Personal website and portfolio of Benjamin Hallock, featuring photography and web development work" />
+      content="The index of Benjamin Hallock: software engineering projects, writing on the web, and photography. Every post is a number." />
+    <link rel="canonical" href="https://benjaminhallock.github.io/" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Benjamin Hallock — Software Engineer & Photographer" />
+    <meta
+      property="og:description"
+      content="Projects, writing and photography. Every post is a number." />
+    <meta property="og:url" content="https://benjaminhallock.github.io/" />
+    <meta property="og:image" content="https://benjaminhallock.github.io/img/1.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Benjamin Hallock — Software Engineer & Photographer" />
+    <meta
+      name="twitter:description"
+      content="Projects, writing and photography. Every post is a number." />
+    <meta name="twitter:image" content="https://benjaminhallock.github.io/img/1.webp" />
+
+    <meta name="theme-color" content="#060607" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="icon"
-      href="/favicon.ico"
-      type="image/x-icon" />
-    <link
-      rel="stylesheet"
-      href="css/normalize.css" />
-    <link
-      rel="stylesheet"
-      href="css/main.css" />
-    <link
-      rel="stylesheet"
-      href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="css/earthy.css" />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-      defer></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
-      defer></script>
-    <script
-      src="js/blog.js"
-      defer></script>
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="/css/site.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Benjamin Hallock",
+        "url": "https://benjaminhallock.github.io/",
+        "jobTitle": "Software Engineer",
+        "sameAs": ["https://github.com/benjaminhallock"],
+        "knowsAbout": ["Web Development", "React", "Node.js", "Photography"]
+      }
+    </script>
+
+    <script src="/js/content.js" defer></script>
+    <script src="/js/site.js" defer></script>
   </head>
   <body>
-    <!-- New Sidebar Navigation -->
-    <nav class="sidebar">
-      <div class="sidebar-header">
-        <h2>Bengi</h2>
-      </div>
-      <ul>
-        <li class="active"><a href="#home">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#blog">Blog</a></li>
-      </ul>
-    </nav>
+    <a class="skip-link" href="#feed">Skip to posts</a>
 
-    <!-- Full Screen Background Slideshow -->
-    <div id="bg-slideshow">
-      <div class="earthy-overlay"></div>
-      <div
-        id="slide-1"
-        class="slide active"
-        style="background-image: url('img/1.jpeg')"></div>
-      <div
-        id="slide-2"
-        class="slide"></div>
-    </div>
+    <div class="bg" id="bg" aria-hidden="true"></div>
 
-    <!-- Main Scrollable Content -->
-    <main class="main-content single-page-layout">
-      <!-- Hero Section -->
-      <section
-        id="home"
-        class="content-section">
-        <header class="hero-content glass-panel">
-          <h1 class="hero-title">Hi! I'm Bengi</h1>
-          <p class="subtitle hero-subtitle">Software Engineer & Photographer</p>
-          <p class="hero-desc">
-            I write about building for the web and share photography from time to time.
+    <button
+      type="button"
+      class="icon-btn rail-reveal"
+      id="rail-reveal"
+      aria-controls="rail"
+      aria-expanded="false"
+      aria-label="Show the post index">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <div class="app">
+      <aside class="rail" id="rail" aria-label="Profile and post index">
+        <div class="profile">
+          <div class="profile-top">
+            <img
+              class="avatar"
+              src="/img/bengi.webp"
+              alt="Benjamin Hallock"
+              width="58"
+              height="58" />
+            <div>
+              <h1 class="profile-name">Benjamin Hallock</h1>
+              <p class="profile-handle">@benjaminhallock</p>
+            </div>
+          </div>
+          <p class="profile-bio">
+            Software engineer and photographer. I build for the web, and I shoot when the light is
+            right.
           </p>
-          <a
-            href="#projects"
-            class="btn hero-btn"
-            >Explore Projects</a
-          >
-        </header>
-      </section>
-
-      <!-- Projects Section -->
-      <section
-        id="projects"
-        class="content-section">
-        <h2 class="section-title glass-title">Projects</h2>
-
-        <!-- Project 1 -->
-        <article
-          class="glass-panel"
-          style="margin-bottom: 3rem">
-          <div class="blog-content">
-            <h2>Pixel Party</h2>
-            <p>
-              4-man project to showcase our ability to use React, CSS, Node.js, Express, and MongoDB
-              Atlas.
-            </p>
-            <img
-              src="/img/p2_1.png"
-              alt="Project 2 image 1"
-              style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
-            <h3>Weeks 1-2</h3>
-            <p>
-              The goal was to making a functional multiplayer game where a player can draw an image
-              on the screen, and the other members of the lobby guess the word in the chatbox. We
-              spent sprint 1 setting up the login/register rest api calls.
-            </p>
-            <img
-              src="/img/p2_3.png"
-              alt="Project 2 image 3"
-              style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
-            <h3>Weeks 3-6</h3>
-            <p>
-              All aspects of the game including chat, drawing, and word-selection use the WebSocket
-              package on the frontend and backend. This is essentially two singletons playing ping
-              pong, both waiting for keywords to callback functions for the server/client to
-              process.
-            </p>
-            <img
-              src="/img/p2_5.png"
-              alt="Project 2 image 5"
-              style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
-            <h3>Conclusion</h3>
-            <p>
-              Our biggest hurdles were getting the websockets to sync across devices. This included
-              getting the drawing aspect to work, as well as running the whole show on a timer that
-              could allow users to join the game at any time.
-            </p>
+          <ul class="profile-stats">
+            <li><b data-stat="posts">21</b><span>Posts</span></li>
+            <li><b data-stat="projects">2</b><span>Projects</span></li>
+            <li><b data-stat="photos">16</b><span>Photos</span></li>
+          </ul>
+          <div class="profile-links">
+            <a href="https://github.com/benjaminhallock" rel="me">GitHub</a>
+            <a href="mailto:benjaminhallock@gmail.com">Email</a>
+            <a href="/humans.txt">About</a>
           </div>
-        </article>
-
-        <!-- Project 2 -->
-        <article class="glass-panel">
-          <div class="blog-content">
-            <h2>Raspberry Pi Camera Die Counter</h2>
-            <p>
-              This is a 3-man project where we were instructed to make a raspberry pi hardware setup
-              which could use a python script to execute any hardware such as a breadboard with
-              buttons. We chose to use a camera as an input device.
-            </p>
-            <img
-              src="/img/p1_1.jpeg"
-              alt="Project image 1"
-              style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
-            <h3>Design and Planning</h3>
-            <p>
-              In order to make a complicated python script, we used a AI-assistant to build a script
-              that could not only take an image, but isolate the black dies on the image and return
-              the correct sum. We needed a platform to build this on so I drafted a 3-d box-like
-              structure.
-            </p>
-            <img
-              src="/img/p1_3.jpeg"
-              alt="Project image 3"
-              style="width: 100%; border-radius: var(--border-radius); margin-bottom: 1.5rem" />
-            <h3>Final Release</h3>
-            <p>
-              Initially the code would not recognize all the dice correctly. Using some
-              prompt-driven development, I guided it to correct the errors in the image and
-              successfully isolated the individual dies on screen.
-            </p>
-          </div>
-        </article>
-      </section>
-
-      <!-- Blog Section -->
-      <section
-        id="blog"
-        class="content-section">
-        <h2 class="section-title glass-title">Writing</h2>
-        <div class="glass-panel">
-          <div id="blog-posts-container">
-            <div class="loading">Loading posts...</div>
-          </div>
-          <p
-            class="blog-all-link"
-            style="margin-top: 2rem; text-align: center">
-            <a
-              href="/blog.html"
-              class="btn hero-btn"
-              >View All Posts Archive</a
-            >
-          </p>
         </div>
-      </section>
 
-      <footer class="glass-footer">
-        <p>&copy; <span id="currentYear"></span> Benjamin Hallock. All rights reserved.</p>
-      </footer>
-    </main>
+        <div class="tabs" id="tabs" role="tablist" aria-label="Filter posts">
+          <button class="tab" role="tab" type="button" data-filter="all" aria-selected="true">
+            All
+          </button>
+          <button class="tab" role="tab" type="button" data-filter="projects" aria-selected="false">
+            Projects
+          </button>
+          <button class="tab" role="tab" type="button" data-filter="writing" aria-selected="false">
+            Writing
+          </button>
+          <button class="tab" role="tab" type="button" data-filter="photos" aria-selected="false">
+            Photos
+          </button>
+        </div>
 
-    <a
-      href="#"
-      class="back-to-top"
-      id="backToTop"
-      >↑</a
-    >
-    <script src="js/main.js"></script>
+        <ol class="index" id="index" aria-label="Posts"></ol>
+
+        <div class="rail-foot">
+          <span>Navigate with <kbd>↑</kbd><kbd>↓</kbd> or the wheel</span>
+          <button
+            type="button"
+            class="icon-btn"
+            id="rail-toggle"
+            aria-controls="rail"
+            aria-expanded="true"
+            aria-label="Hide the post index">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15 6l-6 6 6 6" />
+            </svg>
+          </button>
+        </div>
+      </aside>
+
+      <main class="stage">
+        <div class="stage-bar">
+          <div class="left">
+            <span class="counter" id="counter"></span>
+          </div>
+          <span class="stage-title">The Index</span>
+          <div class="right">
+            <button
+              type="button"
+              class="icon-btn"
+              id="prev-btn"
+              aria-label="Previous post">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 15l-6-6-6 6" /></svg>
+            </button>
+            <button
+              type="button"
+              class="icon-btn"
+              id="next-btn"
+              aria-label="Next post">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+            </button>
+          </div>
+        </div>
+        <div class="feed" id="feed"></div>
+      </main>
+    </div>
   </body>
 </html>

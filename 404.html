@@ -10,15 +10,6 @@
       rel="icon"
       href="/favicon.ico"
       type="image/x-icon" />
-    <link
-      rel="stylesheet"
-      href="/css/normalize.css" />
-    <link
-      rel="stylesheet"
-      href="/css/main.css" />
-    <link
-      rel="stylesheet"
-      href="/css/style.css" />
     <style>
       .error-container {
         text-align: center;
@@ -60,20 +51,25 @@
         background-color: var(--primary-dark);
       }
     </style>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="/css/site.css" />
   </head>
 
-  <body>
-    <nav>
+  <body class="is-document-page">
+<nav class="doc-nav" aria-label="Primary">
+      <a class="doc-brand" href="/index.html">Benjamin Hallock</a>
       <ul>
-        <li><a href="/index.html">Home</a></li>
+        <li><a href="/index.html">Index</a></li>
         <li><a href="/projects.html">Projects</a></li>
         <li><a href="/photos.html">Photos</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/blog.html">Writing</a></li>
       </ul>
     </nav>
-
-    <main>
+    <main class="doc-main">
       <div class="error-container">
         <div class="error-code">404</div>
         <h1 class="error-message">Page Not Found</h1>
@@ -88,10 +84,10 @@
       </div>
     </main>
 
-    <footer>
+    <footer class="doc-footer">
       <p>&copy; <span id="currentYear"></span> Benjamin Hallock. All rights reserved.</p>
     </footer>
 
-    <script src="/js/main.js"></script>
+    <script src="/js/doc.js"></script>
   </body>
 </html>

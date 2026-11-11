@@ -1,0 +1,30 @@
+[
+  {
+    "id": "pixel-party",
+    "type": "project",
+    "title": "Pixel Party",
+    "kicker": "Real-time multiplayer drawing game",
+    "year": "2025",
+    "summary": "A four-person build of a real-time drawing-and-guessing game. Players draw on a shared canvas while the lobby guesses in chat — every stroke, guess and timer tick travels over WebSockets and lands in MongoDB.",
+    "body": "Four-person project built to show React, Express and MongoDB working under real-time load. Login and registration were the first sprint; the game itself runs on WebSockets, with the server driving each round on a timer so players can join mid-game.",
+    "tags": ["React", "Node.js", "Express", "MongoDB", "WebSockets"],
+    "cover": "/img/p2_1.webp",
+    "images": ["/img/p2_1.webp", "/img/p2_3.webp", "/img/p2_5.webp"],
+    "href": "/projects.html#pixel-party",
+    "linkLabel": "Read the build log"
+  },
+  {
+    "id": "die-counter",
+    "type": "project",
+    "title": "Raspberry Pi Die Counter",
+    "kicker": "Computer vision on a $35 board",
+    "year": "2024",
+    "summary": "A three-person hardware project: point a Raspberry Pi camera at a tray of dice, isolate each die, and return the sum. Includes a 3D-printed enclosure designed and printed on campus.",
+    "body": "The goal was a physical input device driven by Python. We chose a camera and dice because the output is immediately verifiable. The hard part was isolation — early builds missed dice under uneven light, which we fixed by tuning the thresholding pipeline.",
+    "tags": ["Python", "Raspberry Pi", "OpenCV", "3D printing"],
+    "cover": "/img/p1_1.webp",
+    "images": ["/img/p1_1.webp", "/img/p1_3.webp", "/img/p1_5.webp"],
+    "href": "/projects.html#die-counter",
+    "linkLabel": "Read the build log"
+  }
+]

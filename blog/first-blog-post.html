@@ -13,38 +13,32 @@
       rel="icon"
       href="/favicon.ico"
       type="image/x-icon" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="stylesheet"
-      href="/css/normalize.css" />
-    <link
-      rel="stylesheet"
-      href="/css/main.css" />
-    <link
-      rel="stylesheet"
-      href="/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="/css/earthy.css" />
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="/css/site.css" />
   </head>
-  <body>
-    <nav>
+  <body class="is-document-page">
+<nav class="doc-nav" aria-label="Primary">
+      <a class="doc-brand" href="/index.html">Benjamin Hallock</a>
       <ul>
-        <li><a href="/index.html">Home</a></li>
+        <li><a href="/index.html">Index</a></li>
         <li><a href="/projects.html">Projects</a></li>
         <li><a href="/photos.html">Photos</a></li>
-        <li class="active"><a href="/blog.html">Blog</a></li>
+        <li><a href="/blog.html" aria-current="page">Writing</a></li>
       </ul>
     </nav>
-
-    <main>
+    <main class="doc-main">
       <article class="blog-post-full">
         <header class="blog-header">
           <h1>My First Blog Post</h1>
           <div class="blog-meta">
             <span class="blog-date">May 15, 2025</span>
             <span class="blog-tags">
-              <a href="/blog/tag/web-development">web development</a>,
-              <a href="/blog/tag/design">design</a>
+              <a href="/blog.html">web development</a>,
+              <a href="/blog.html">design</a>
             </span>
           </div>
         </header>
@@ -96,7 +90,7 @@ function createComponent() {
         <div class="blog-footer">
           <div class="blog-author">
             <img
-              src="/img/bengi.jpeg"
+              src="/img/bengi.webp"
               alt="Benjamin Hallock"
               class="author-image" />
             <div class="author-info">
@@ -120,7 +114,7 @@ function createComponent() {
       </article>
     </main>
 
-    <footer>
+    <footer class="doc-footer">
       <p>&copy; <span id="currentYear"></span> Benjamin Hallock. All rights reserved.</p>
     </footer>
 
@@ -130,6 +124,6 @@ function createComponent() {
       id="backToTop"
       >↑</a
     >
-    <script src="/js/main.js"></script>
+    <script src="/js/doc.js"></script>
   </body>
 </html>

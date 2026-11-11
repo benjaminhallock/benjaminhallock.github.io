@@ -1,0 +1,18 @@
+[
+  { "id": "photo-01", "type": "photo", "src": "/img/1.webp",  "alt": "Photograph by Benjamin Hallock, frame 01" },
+  { "id": "photo-02", "type": "photo", "src": "/img/2.webp",  "alt": "Photograph by Benjamin Hallock, frame 02" },
+  { "id": "photo-03", "type": "photo", "src": "/img/3.webp",  "alt": "Photograph by Benjamin Hallock, frame 03" },
+  { "id": "photo-04", "type": "photo", "src": "/img/4.webp",  "alt": "Photograph by Benjamin Hallock, frame 04" },
+  { "id": "photo-05", "type": "photo", "src": "/img/5.webp",  "alt": "Photograph by Benjamin Hallock, frame 05" },
+  { "id": "photo-06", "type": "photo", "src": "/img/6.webp",  "alt": "Photograph by Benjamin Hallock, frame 06" },
+  { "id": "photo-07", "type": "photo", "src": "/img/7.webp",  "alt": "Photograph by Benjamin Hallock, frame 07" },
+  { "id": "photo-08", "type": "photo", "src": "/img/8.webp",  "alt": "Photograph by Benjamin Hallock, frame 08" },
+  { "id": "photo-09", "type": "photo", "src": "/img/9.webp",  "alt": "Photograph by Benjamin Hallock, frame 09" },
+  { "id": "photo-10", "type": "photo", "src": "/img/10.webp", "alt": "Photograph by Benjamin Hallock, frame 10" },
+  { "id": "photo-11", "type": "photo", "src": "/img/11.webp", "alt": "Photograph by Benjamin Hallock, frame 11" },
+  { "id": "photo-12", "type": "photo", "src": "/img/12.webp", "alt": "Photograph by Benjamin Hallock, frame 12" },
+  { "id": "photo-13", "type": "photo", "src": "/img/13.webp", "alt": "Photograph by Benjamin Hallock, frame 13" },
+  { "id": "photo-14", "type": "photo", "src": "/img/14.webp", "alt": "Photograph by Benjamin Hallock, frame 14" },
+  { "id": "photo-15", "type": "photo", "src": "/img/15.webp", "alt": "Photograph by Benjamin Hallock, frame 15" },
+  { "id": "photo-16", "type": "photo", "src": "/img/16.webp", "alt": "Photograph by Benjamin Hallock, frame 16" }
+]
