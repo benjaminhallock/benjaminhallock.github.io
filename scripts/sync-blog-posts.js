@@ -5,6 +5,10 @@ const cheerio = require('cheerio');
 const BLOG_DIR = path.join(__dirname, '..', 'blog');
 const OUTPUT_FILE = path.join(BLOG_DIR, 'posts.json');
 
+/** Local-time YYYY-MM-DD, so a date never shifts across a UTC boundary. */
+const localISO = d =>
+  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+
 async function syncBlogPosts() {
   try {
     // Get all HTML files from the blog directory
@@ -27,19 +31,16 @@ async function syncBlogPosts() {
       const excerpt = $('meta[name="description"]').attr('content') || '';
       
       // Extract date from the blog post
-      let date = $('.blog-date').text() || ''; 
-      // Convert to YYYY-MM-DD format if possible
-      if (date) {
-        try {
-          const dateObj = new Date(date);
-          date = dateObj.toISOString().split('T')[0];
-        } catch (e) {
-          console.warn(`Could not parse date for ${file}: ${date}`);
-          date = new Date().toISOString().split('T')[0]; // Use today's date as fallback
-        }
-      } else {
-        date = new Date().toISOString().split('T')[0]; // Use today's date as fallback
+      const rawDate = $('.blog-date').text().trim();
+      // Build the ISO date from local parts. Round tripping through
+      // toISOString() reads the date as UTC and shifts the day east of UTC.
+      const parsedDate = rawDate ? new Date(rawDate) : new Date();
+      if (rawDate && Number.isNaN(parsedDate.getTime())) {
+        console.warn(`Could not parse date for ${file}: ${rawDate}`);
       }
+      const date = localISO(
+        Number.isNaN(parsedDate.getTime()) ? new Date() : parsedDate
+      );
       
       // Extract tags
       const tags = [];

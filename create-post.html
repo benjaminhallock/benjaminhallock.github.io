@@ -1,143 +1,486 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create Blog Post - Benjamin Hallock</title>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <title>New post — Benjamin Hallock</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="/css/site.css" />
     <style>
+      /* The form controls are specific to this page, so they live here. */
+      .studio-status {
+        width: min(100%, 760px);
+        margin: 0 0 1.5rem;
+        padding: 12px 16px;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--line);
+        background: var(--panel);
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+      .studio-status.is-ok {
+        border-color: rgba(122, 226, 160, 0.35);
+        color: #bfe9cd;
+      }
+      .studio-status.is-off {
+        border-color: rgba(255, 196, 120, 0.3);
+        color: #f0d6ae;
+      }
+      .studio-status code {
+        font-family: var(--mono);
+        font-size: 0.92em;
+        color: #fff;
+      }
+
       .form-group {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.4rem;
       }
       .form-group label {
         display: block;
-        margin-bottom: 0.5rem;
-        color: var(--text-bright);
+        margin-bottom: 0.45rem;
+        color: var(--text);
         font-weight: 500;
+        font-size: 0.9rem;
+      }
+      .form-hint {
+        display: block;
+        margin-top: 0.4rem;
+        font-size: 0.76rem;
+        color: var(--faint);
       }
       .form-control {
         width: 100%;
-        padding: 0.8rem;
-        background: var(--bg-darkest);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        color: var(--text-bright);
-        border-radius: var(--border-radius);
-        font-family: var(--font-body);
+        padding: 0.75rem 0.85rem;
+        background: var(--panel-solid);
+        border: 1px solid var(--line);
+        color: var(--text);
+        border-radius: var(--radius-sm);
+        font-family: var(--sans);
+        font-size: 0.92rem;
       }
       .form-control:focus {
         outline: none;
         border-color: var(--accent);
-        box-shadow: var(--focus-ring);
+        box-shadow: var(--focus);
       }
       textarea.form-control {
-        font-family: monospace;
+        font-family: var(--mono);
+        font-size: 0.85rem;
+        line-height: 1.6;
         resize: vertical;
+      }
+
+      .form-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 1.4rem;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+      .form-row input[type='checkbox'] {
+        width: 16px;
+        height: 16px;
+        accent-color: var(--accent);
+      }
+
+      .form-actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .btn[disabled] {
+        opacity: 0.55;
+        cursor: progress;
+        transform: none;
+      }
+
+      .result {
+        width: min(100%, 760px);
+        margin-top: 1.5rem;
+        padding: 16px 20px;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--line);
+        background: var(--panel);
+        font-size: 0.88rem;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+      .result[hidden] {
+        display: none;
+      }
+      .result.is-ok {
+        border-color: rgba(122, 226, 160, 0.35);
+      }
+      .result.is-error {
+        border-color: rgba(255, 122, 122, 0.4);
+        color: #f3c3c3;
+      }
+      .result ul {
+        margin: 0.6rem 0;
+        padding-left: 1.1rem;
+      }
+      .result code {
+        font-family: var(--mono);
+        font-size: 0.92em;
+        color: #fff;
       }
     </style>
   </head>
-  <body>
-    <nav>
+  <body class="is-document-page">
+    <nav class="doc-nav" aria-label="Primary">
+      <a class="doc-brand" href="/index.html">Benjamin Hallock</a>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="/index.html">Index</a></li>
         <li><a href="/projects.html">Projects</a></li>
-        <li><a href="photos.html">Photos</a></li>
-        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/photos.html">Photos</a></li>
+        <li><a href="/blog.html">Writing</a></li>
       </ul>
     </nav>
 
-    <main class="blog-page">
+    <main class="doc-main">
       <header class="page-header">
-        <h1>Create New Blog Post</h1>
-        <p>Fill out this form to generate the properly formatted HTML file. Once downloaded, drag it into your <code>blog/</code> directory and run <code>npm run sync</code> in your terminal.</p>
+        <h1>New post</h1>
+        <p>Write it, hit publish, and it lands in <code>blog/</code> — rebuilt and committed for you.</p>
       </header>
 
+      <div id="studio-status" class="studio-status">
+        Checking for the local studio…
+      </div>
+
       <section class="card">
-        <form id="createPostForm">
-          <div class="form-group">
-            <label for="postTitle">Title</label>
-            <input type="text" id="postTitle" class="form-control" required placeholder="My Awesome Blog Post" />
-          </div>
+        <div class="card-body">
+          <form id="createPostForm" novalidate>
+            <div class="form-group">
+              <label for="postTitle">Title</label>
+              <input
+                type="text"
+                id="postTitle"
+                class="form-control"
+                required
+                placeholder="Notes on caching" />
+              <span class="form-hint">Used for the page title and the filename.</span>
+            </div>
 
-          <div class="form-group">
-            <label for="postExcerpt">Excerpt (Meta Description)</label>
-            <textarea id="postExcerpt" class="form-control" required rows="2" placeholder="A short summary that appears on the blog cards..."></textarea>
-          </div>
+            <div class="form-group">
+              <label for="postExcerpt">Excerpt</label>
+              <textarea
+                id="postExcerpt"
+                class="form-control"
+                rows="2"
+                placeholder="One line for search results and the writing index."></textarea>
+              <span class="form-hint">Shown on the Writing page and in search results.</span>
+            </div>
 
-          <div class="form-group">
-            <label for="postTags">Tags (comma separated)</label>
-            <input type="text" id="postTags" class="form-control" placeholder="e.g. photography, coding, life" />
-          </div>
+            <div class="form-group">
+              <label for="postTags">Tags</label>
+              <input type="text" id="postTags" class="form-control" placeholder="web, notes, design" />
+              <span class="form-hint">Comma separated. Optional.</span>
+            </div>
 
-          <div class="form-group">
-            <label for="postContent">Content (HTML format)</label>
-            <textarea id="postContent" class="form-control" required rows="10" placeholder="<p>Write your post content here using HTML tags like &lt;p&gt;, &lt;h2&gt;, etc...</p>"></textarea>
-          </div>
+            <div class="form-group">
+              <label for="postContent">Content</label>
+              <textarea
+                id="postContent"
+                class="form-control"
+                required
+                rows="14"
+                placeholder="<p>Write the post here.</p>
 
-          <button type="submit" class="btn">Generate & Download Post File</button>
-        </form>
+Plain text works too — blank lines become paragraphs."></textarea>
+              <span class="form-hint">
+                HTML, or plain text with blank lines between paragraphs.
+              </span>
+            </div>
+
+            <div class="form-row">
+              <input type="checkbox" id="postPush" checked />
+              <label for="postPush" style="margin: 0">Push to GitHub after committing</label>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" id="submitBtn" class="btn">Publish post</button>
+            </div>
+          </form>
+        </div>
       </section>
+
+      <div id="result" class="result" hidden></div>
     </main>
 
+    <footer class="doc-footer">
+      <p>&copy; <span id="currentYear"></span> Benjamin Hallock. All rights reserved.</p>
+    </footer>
+
+    <a href="#" id="backToTop" class="back-to-top" aria-label="Back to top">↑</a>
+
+    <script src="/js/doc.js"></script>
     <script>
-      document.getElementById('createPostForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const title = document.getElementById('postTitle').value;
-        const excerpt = document.getElementById('postExcerpt').value;
-        const tagsInput = document.getElementById('postTags').value;
-        const content = document.getElementById('postContent').value;
-        
-        const date = new Date().toISOString().split('T')[0];
-        const tags = tagsInput.split(',').map(t => t.trim()).filter(t => t);
-        const tagsHtml = tags.map(t => `<a href="#">${t}</a>`).join(' ');
-        
-        const htmlTemplate = `<!DOCTYPE html>
+      (() => {
+        'use strict'
+
+        const form = document.getElementById('createPostForm')
+        const statusBox = document.getElementById('studio-status')
+        const resultBox = document.getElementById('result')
+        const submitBtn = document.getElementById('submitBtn')
+
+        let studio = false
+
+        /* --- the post template -------------------------------------------
+           Mirrors scripts/lib/post.js, which is the canonical copy. This one
+           only runs when the studio server is not available and the post has
+           to be downloaded by hand. */
+
+        const escapeHtml = value =>
+          String(value).replace(
+            /[&<>"']/g,
+            c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]),
+          )
+
+        const slugify = title =>
+          String(title)
+            .normalize('NFKD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-+|-+$/g, '')
+            .slice(0, 80)
+
+        const humanDate = iso => {
+          const [y, m, d] = iso.split('-').map(Number)
+          return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            timeZone: 'UTC',
+          })
+        }
+
+        const localDate = () => {
+          const d = new Date()
+          const pad = n => String(n).padStart(2, '0')
+          return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
+        }
+
+        const normalizeContent = input => {
+          const value = String(input || '').trim()
+          if (!value) return ''
+          if (/<\/?[a-z][^>]*>/i.test(value)) return value
+          return value
+            .split(/\n{2,}/)
+            .map(block => `<p>${escapeHtml(block.trim()).replace(/\n/g, '<br />')}</p>`)
+            .join('\n')
+        }
+
+        const buildHtml = ({ title, excerpt, tags, content, date, slug }) => {
+          const tagsBlock = tags.length
+            ? `\n            <span class="blog-tags">\n${tags
+                .map(tag => `              <a href="/blog.html">${escapeHtml(tag)}</a>`)
+                .join(',\n')}\n            </span>`
+            : ''
+
+          return `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>${title} - Benjamin Hallock</title>
-    <meta name="description" content="${excerpt}" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>${escapeHtml(title)} - Benjamin Hallock</title>
+    <meta
+      name="description"
+      content="${escapeHtml(excerpt)}" />
+    <link rel="canonical" href="https://benjaminhallock.github.io/blog/${slug}.html" />
+    <link
+      rel="icon"
+      href="/favicon.ico"
+      type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="/css/site.css" />
   </head>
-  <body>
-    <!-- Content Wrapper generated by Create Tool -->
-    <main class="blog-page">
-      <article class="blog-post">
-        <header class="page-header">
-          <h1>${title}</h1>
+  <body class="is-document-page">
+    <nav class="doc-nav" aria-label="Primary">
+      <a class="doc-brand" href="/index.html">Benjamin Hallock</a>
+      <ul>
+        <li><a href="/index.html">Index</a></li>
+        <li><a href="/projects.html">Projects</a></li>
+        <li><a href="/photos.html">Photos</a></li>
+        <li><a href="/blog.html" aria-current="page">Writing</a></li>
+      </ul>
+    </nav>
+
+    <main class="doc-main">
+      <article class="blog-post-full">
+        <header class="blog-header">
+          <h1>${escapeHtml(title)}</h1>
           <div class="blog-meta">
-            <span class="blog-date">${date}</span>
-            ${tags.length > 0 ? `<div class="blog-tags">${tagsHtml}</div>` : ''}
+            <span class="blog-date">${humanDate(date)}</span>${tagsBlock}
           </div>
         </header>
-        
-        <div class="post-content">\n${content}\n        </div>
+
+        <div class="blog-content">
+${content}
+        </div>
+
+        <div class="blog-footer">
+          <div class="blog-author">
+            <img
+              src="/img/bengi.webp"
+              alt="Benjamin Hallock"
+              class="author-image" />
+            <div class="author-info">
+              <h3>Written by Benjamin Hallock</h3>
+              <p>
+                Web developer and photographer with a passion for clean design and usable
+                interfaces.
+              </p>
+            </div>
+          </div>
+        </div>
       </article>
     </main>
-  </body>
-</html>`;
 
-        // Generate slug from title for the filename
-        const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
-        
-        // Trigger automatic download
-        const blob = new Blob([htmlTemplate], { type: 'text/html' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `${slug}.html`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-      });
+    <footer class="doc-footer">
+      <p>&copy; <span id="currentYear"></span> Benjamin Hallock. All rights reserved.</p>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+    <script src="/js/doc.js"></script>
+  </body>
+</html>
+`
+        }
+
+        /* --- status + result ---------------------------------------------- */
+
+        const setStatus = (kind, html) => {
+          statusBox.className = `studio-status is-${kind}`
+          statusBox.innerHTML = html
+        }
+
+        const showResult = (kind, html) => {
+          resultBox.hidden = false
+          resultBox.className = `result is-${kind}`
+          resultBox.innerHTML = html
+          resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+        }
+
+        const collect = () => ({
+          title: document.getElementById('postTitle').value.trim(),
+          excerpt: document.getElementById('postExcerpt').value.trim(),
+          tags: document
+            .getElementById('postTags')
+            .value.split(',')
+            .map(t => t.trim())
+            .filter(Boolean),
+          content: document.getElementById('postContent').value,
+          push: document.getElementById('postPush').checked,
+        })
+
+        /* --- is the studio running? --------------------------------------- */
+
+        fetch('/api/health', { cache: 'no-store' })
+          .then(r => (r.ok ? r.json() : Promise.reject(new Error('no studio'))))
+          .then(data => {
+            if (!data || !data.studio) throw new Error('no studio')
+            studio = true
+            submitBtn.textContent = 'Publish post'
+            setStatus(
+              'ok',
+              '<strong>Studio connected.</strong> Publishing writes the file, rebuilds the indexes, and commits it — and pushes if you leave the box ticked.',
+            )
+          })
+          .catch(() => {
+            studio = false
+            submitBtn.textContent = 'Download post file'
+            setStatus(
+              'off',
+              '<strong>Static page.</strong> The studio is not running, so this button can only download the file. Start it with <code>npm run studio</code> to publish in one click.',
+            )
+          })
+
+        /* --- submit -------------------------------------------------------- */
+
+        form.addEventListener('submit', async event => {
+          event.preventDefault()
+
+          const payload = collect()
+          if (!payload.title) return showResult('error', 'A title is required.')
+          if (!payload.content.trim()) return showResult('error', 'Some content is required.')
+
+          submitBtn.disabled = true
+          submitBtn.textContent = studio ? 'Publishing…' : 'Preparing…'
+
+          try {
+            if (studio) {
+              const response = await fetch('/api/posts', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+              })
+              const body = await response.json().catch(() => ({}))
+              if (!response.ok) throw new Error(body.error || `Publish failed (${response.status}).`)
+
+              const pushLine = body.pushed
+                ? 'pushed to GitHub'
+                : body.pushError
+                  ? `not pushed — <code>${escapeHtml(body.pushError.split('\n')[0])}</code>`
+                  : 'committed locally, not pushed'
+
+              showResult(
+                'ok',
+                `<p><strong>Published.</strong> <code>${body.file}</code></p>
+                 <ul>
+                   <li>commit <code>${body.commit}</code> — ${pushLine}</li>
+                   <li>staged ${body.staged.map(f => `<code>${f}</code>`).join(', ')}</li>
+                 </ul>
+                 <p><a href="${body.url}">Read the post</a> · <a href="/blog.html">Writing index</a></p>`,
+              )
+              form.reset()
+              document.getElementById('postPush').checked = true
+            } else {
+              const slug = slugify(payload.title)
+              const html = buildHtml({
+                ...payload,
+                slug,
+                date: localDate(),
+                content: normalizeContent(payload.content),
+              })
+              const blob = new Blob([html], { type: 'text/html' })
+              const url = URL.createObjectURL(blob)
+              const anchor = document.createElement('a')
+              anchor.href = url
+              anchor.download = `${slug}.html`
+              document.body.appendChild(anchor)
+              anchor.click()
+              document.body.removeChild(anchor)
+              URL.revokeObjectURL(url)
+
+              showResult(
+                'ok',
+                `Downloaded <code>${slug}.html</code>. Move it into <code>blog/</code>, then run <code>npm run build</code> and commit.`,
+              )
+            }
+          } catch (err) {
+            showResult('error', escapeHtml(err.message))
+          } finally {
+            submitBtn.disabled = false
+            submitBtn.textContent = studio ? 'Publish post' : 'Download post file'
+          }
+        })
+      })()
     </script>
   </body>
 </html>
