@@ -119,10 +119,16 @@
 
     body.append(kicker, title)
 
-    if (item.type === 'post' && item.body) {
+    if (item.body) {
       const article = document.createElement('div')
-      article.className = 'card-article blog-content'
-      article.innerHTML = item.body
+      article.className = item.type === 'post' ? 'card-article blog-content' : 'card-article'
+      if (item.type === 'post') article.innerHTML = item.body
+      else {
+        article.classList.add('blog-content')
+        article.innerHTML = item.body
+        const firstHeading = article.querySelector('h2')
+        if (firstHeading && firstHeading.textContent.trim() === item.title) firstHeading.remove()
+      }
       body.appendChild(article)
     } else {
       const summary = document.createElement('p')
@@ -142,18 +148,9 @@
       body.appendChild(tags)
     }
 
-    if (item.href && item.type !== 'post') {
-      const a = document.createElement('a')
-      a.className = 'card-link'
-      a.href = item.href
-      a.innerHTML = `<span>${item.linkLabel || 'Read more'}</span>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`
-      body.appendChild(a)
-    }
-
     card.append(head, body)
 
-    if (item.images && item.images.length) {
+    if (item.images && item.images.length && item.type !== 'project') {
       const media = document.createElement('div')
       media.className = 'card-media'
       for (const src of item.images.slice(0, 3)) {

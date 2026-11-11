@@ -617,6 +617,8 @@ body.rail-hidden .stage {
 
 .card-article {
   margin-top: 1.25rem;
+  color: var(--muted);
+  line-height: 1.7;
 }
 
 .card-article h2 {

@@ -15,12 +15,25 @@
  */
 const fs = require('fs')
 const path = require('path')
+const cheerio = require('cheerio')
 
 const ROOT = path.join(__dirname, '..')
 const read = file => JSON.parse(fs.readFileSync(path.join(ROOT, file), 'utf8'))
 
 const projects = read('content/projects.json')
 const photos = read('content/photos.json')
+
+const projectBodies = new Map()
+try {
+  const projectPage = fs.readFileSync(path.join(ROOT, 'projects.html'), 'utf8')
+  const $ = cheerio.load(projectPage)
+  $('article[id] .blog-content').each((_, el) => {
+    const article = $(el).closest('article[id]')
+    projectBodies.set(article.attr('id'), $(el).html() || '')
+  })
+} catch (err) {
+  console.warn('build-content: could not read detailed project bodies')
+}
 
 let posts = []
 try {
@@ -33,7 +46,10 @@ try {
 posts = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date))
 
 const items = [
-  ...projects.map(p => ({ ...p })),
+  ...projects.map(p => ({
+    ...p,
+    body: projectBodies.get(p.id) || p.body || '',
+  })),
   ...posts.map(p => ({
     id: p.id,
     type: 'post',
